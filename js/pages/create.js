@@ -4,6 +4,7 @@ const makePage = () => {
     let main = document.querySelector("main")
 
     let container = document.createElement("div")
+    container.className = "container"
     
     let headline = document.createElement("h1")
     headline.innerHTML = "Create Post"
