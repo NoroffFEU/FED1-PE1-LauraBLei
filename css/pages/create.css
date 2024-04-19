@@ -1,0 +1,19 @@
+.addImageBox{
+    width: 100%;
+    height: 100%;
+    background-color: var(--brown);
+    max-height: 435px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createPostAddImage{
+    width: 100%;
+    height: 435px;
+    background-color: var(--brown);
+}
+
+.addImageButton{
+    position: absolute;
+}
