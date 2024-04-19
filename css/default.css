@@ -1,0 +1,14 @@
+:root{
+    --blue:  #316F9E;
+    --black: #2F2E2E;
+    --white: #FFFFFF;
+    --brown: #9E6031;
+}
+
+body{
+    background-color: #2F2E2E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFFFFF;
+}
