@@ -63,11 +63,11 @@ textInput.placeholder = "Add text here..";
 let submitButton = document.createElement("input");
 submitButton.type = "submit";
 submitButton.value = "Save";
-submitButton.className = "saveButton"
+submitButton.className = "blueButton"
 
 let deleteButton = document.createElement("button")
 deleteButton.innerText = "Cancel"
-deleteButton.className = "deleteButton"
+deleteButton.className = "smallBlueButton"
 
 container.append(form, deleteButton)
 form.append(titleFormBox, textFormBox, submitButton)

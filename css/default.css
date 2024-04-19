@@ -26,8 +26,10 @@ body {
 }
 
 main {
-  max-width: 1400px;
+  max-width: 1100px;
   width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .headerOne {
@@ -49,22 +51,22 @@ main {
 }
 
 .alternativeHeadline {
-    color: var(--white);
-    font-family: Playball;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  color: var(--white);
+  font-family: Playball;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.flexContainerCenterRow{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.flexContainerCenterRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.flexContainerCenterCol{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.flexContainerCenterCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
