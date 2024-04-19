@@ -5,6 +5,11 @@
     --brown: #9E6031;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body{
     background-color: #2F2E2E;
     display: flex;

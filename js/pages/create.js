@@ -18,6 +18,7 @@ const makePage = () => {
 
     main.appendChild(container)
     container.append(headline, imageBox)
+    imageBox.append(image, addImage)
 }
 
 makePage()
