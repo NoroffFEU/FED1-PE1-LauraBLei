@@ -27,3 +27,9 @@
     gap: 35px;
     margin: 25px;
 }
+
+.inputBox{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
