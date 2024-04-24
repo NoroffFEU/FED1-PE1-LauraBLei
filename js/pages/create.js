@@ -1,3 +1,11 @@
+import { makeHeader } from "./components/header.js";
+
+const runPage = () => {
+  makePage()
+  makeHeader()
+}
+
+
 const makePage = () => {
   let main = document.querySelector("main");
 
@@ -18,7 +26,7 @@ const makePage = () => {
 
 const makeForms = (container, imageBox) => {
   let form = document.createElement("form");
-  form.className = "flexContainerCenterCol form";
+  form.className = "flex flex-col items-center form";
 
   let imageFormBox = document.createElement("div");
   imageFormBox.className = "inputBox";
@@ -61,7 +69,6 @@ const makeForms = (container, imageBox) => {
   titleInput.defaultValue = "title number 1";
 
   let textFormBox = document.createElement("div");
-  textFormBox.className = "flexContainerCenterRow";
 
   let textInput = document.createElement("textarea");
   textInput.className = "textInput";
@@ -118,4 +125,4 @@ const makeForms = (container, imageBox) => {
   });
 };
 
-makePage();
+runPage();

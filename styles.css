@@ -1,4 +1,5 @@
-@import url(/css/default.css);
+@import url(/css/components/default.css);
 @import url(/css/components/forms.css);
 @import url(/css/components/buttons.css);
 @import url(/css/pages/create.css);
+@import url(/css/components/header.css);
