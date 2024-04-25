@@ -19,12 +19,12 @@ body {
   color: var(--white);
 }
 
-header {
+header, footer {
   background-color: var(--white);
+  color: var(--black);
   width: 100%;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-
 .container {
   width: 100%;
   display: flex;
@@ -33,7 +33,7 @@ header {
 }
 
 main {
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%;
   margin-top: 100px;
   margin-bottom: 100px;
@@ -46,7 +46,6 @@ main {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  cursor: pointer;
 }
 
 .headerOne {
@@ -74,6 +73,11 @@ main {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.footerText {
+  font-family: "Playfair Display";
+  font-size: 25px; 
 }
 
 .flex {
