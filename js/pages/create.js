@@ -1,8 +1,10 @@
 import { makeHeader } from "./components/header.js";
+import { makeFooter } from "./components/footer.js";
 
 const runPage = () => {
   makePage()
   makeHeader()
+  makeFooter()
 }
 
 

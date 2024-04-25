@@ -20,15 +20,15 @@ const desktopHeader = () => {
 
   let createPost = document.createElement("a");
   createPost.innerText = "+ Create Post";
-  createPost.className = "headerText margin";
+  createPost.className = "headerText margin cursor";
 
   let home = document.createElement("a");
   home.innerText = "Home";
-  home.className = "headerText margin";
+  home.className = "headerText margin cursor";
 
   let logIn = document.createElement("a");
   logIn.innerText = "Log In";
-  logIn.className = "headerText margin";
+  logIn.className = "headerText margin cursor";
 
   header.appendChild(container);
   container.append(logo, nav);
