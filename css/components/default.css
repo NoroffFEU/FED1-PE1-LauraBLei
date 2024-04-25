@@ -78,6 +78,11 @@ main {
   line-height: normal;
 }
 
+p{
+  font-family: "Playfair Display";
+  font-size: 20px;
+}
+
 .footerText {
   font-family: "Playfair Display";
   font-size: 25px; 
@@ -109,4 +114,12 @@ main {
 
 .cursor{
   cursor: pointer;
+}
+
+.gap10{
+  gap: 10px;
+}
+
+.position-right {
+  align-self: flex-end;
 }
