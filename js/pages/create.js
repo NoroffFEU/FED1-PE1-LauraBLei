@@ -15,7 +15,7 @@ const makePage = () => {
   container.className = "container";
 
   let imageBox = document.createElement("div");
-  imageBox.className = "imagePreview";
+  imageBox.className = "postImageContainer";
 
   let headline = document.createElement("h1");
   headline.innerHTML = "Create Post";
@@ -42,12 +42,13 @@ const makeForms = (container, imageBox) => {
   imageInput.id = "image";
   imageInput.name = "image"
   imageInput.className = "titleInput";
+  imageInput.placeholder = "Insert Image URL here.."
 
   imageInput.addEventListener("input", (event) => {
     if (imageInput.value.trim() !== "") {
       let imagePreview = document.createElement("img");
       imagePreview.src = imageInput.value;
-      imagePreview.className = "imagePreview";
+      imagePreview.className = "postImage";
       imageBox.appendChild(imagePreview);
     } else {
       imagePreview.src = "#";
@@ -68,7 +69,7 @@ const makeForms = (container, imageBox) => {
   titleInput.id = "title";
   titleInput.name = "title";
   titleInput.placeholder = "Insert text here..";
-  titleInput.defaultValue = "title number 1";
+
 
   let textFormBox = document.createElement("div");
 
@@ -77,7 +78,6 @@ const makeForms = (container, imageBox) => {
   textInput.id = "text";
   textInput.name = "text";
   textInput.placeholder = "Add text here..";
-  textInput.defaultValue = "Test number 1";
 
   let submitButton = document.createElement("input");
   submitButton.type = "submit";
@@ -113,8 +113,8 @@ const makeForms = (container, imageBox) => {
         let response = await fetch("https://v2.api.noroff.dev/blog/posts/Laura", {
             method: "POST",
             headers: {
-                "content-Type":"application/json",
-                "Authorization": "Insert Access key"
+                'Content-type': 'application/json; charset=UTF-8',
+                "Authorization": "Bearer insert accesstoken here"
             },
             body: JSON.stringify(postData)
         })
@@ -123,7 +123,6 @@ const makeForms = (container, imageBox) => {
     } catch (error) {
         console.log("Error: ", error);
     }
-    console.log("fetch successfull");
   });
 };
 
