@@ -1,5 +1,6 @@
 import { makeHeader } from "../components/header.js";
 import { makeFooter } from "../components/footer.js";
+import { doFetch } from "../components/fetch.js";
 
 const runPage = () => {
   makePage();
@@ -45,8 +46,10 @@ const makePage = () => {
 };
 
 const makeBlogPostGrid = async (container) => {
-    let blogs = await fetchBlogs()
-
+    // let blogs = await fetchBlogs()
+    const blogs = await doFetch("GET")
+    blogs.sort((a,b) => new Date(b.created) - new Date(a.created))
+  console.log(blogs);
     blogs.forEach(blog => {
         let imageBox = document.createElement("div")
         imageBox.className = "postImageBox flex justify-center items-center"
@@ -56,7 +59,7 @@ const makeBlogPostGrid = async (container) => {
         image.alt = "blog Image"
         image.className = "postGridImage cursor"
         image.addEventListener("click", () => {
-            window.location.href = "/post/index.html?=" + blog.id
+            window.location.href = "/post/index.html?" + blog.id
         })
 
         let title = document.createElement("h2")
@@ -70,13 +73,5 @@ const makeBlogPostGrid = async (container) => {
     console.log(blogs);
 };
 
-const fetchBlogs = async() => {
-    let noroffapi = "https://v2.api.noroff.dev/blog/posts/Laura"
-    try{
-        let response = await fetch(noroffapi);
-        let blogs = await response.json();
-        return blogs.data.sort((a,b) => new Date(b.created) - new Date(a.created));
-    }catch(error) {}
-};
 
 runPage();

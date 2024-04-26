@@ -8,6 +8,9 @@ const runPage = () => {
 };
 
 const makePage = () => {
+  const id = window.location.search.split("?=")
+  console.log(id[1]);
+
   let main = document.querySelector("main");
 
   let container = document.createElement("div");
