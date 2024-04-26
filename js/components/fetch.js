@@ -1,5 +1,7 @@
-export const doFetch = async (method, body) => {
-    const noroffapi = "https://v2.api.noroff.dev/blog/posts/Laura"
+export const doFetch = async (method, path = "", body) => {
+    const noroffapi = "https://v2.api.noroff.dev/blog/posts/Laura"+path
+
+    console.log("Doing fetch call towards: ", noroffapi);
   
     try {
       const response = await fetch(noroffapi, {
