@@ -9,6 +9,7 @@ const runPage = () => {
 
 
 const makePage = () => {
+
   let main = document.querySelector("main");
 
   let container = document.createElement("div");
