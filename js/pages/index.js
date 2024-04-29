@@ -1,6 +1,7 @@
 import { makeHeader } from "../components/header.js";
 import { makeFooter } from "../components/footer.js";
 import { doFetch } from "../components/fetch.js";
+import { carousel } from "../../carousel.js";
 
 const runPage = () => {
   makePage();
@@ -22,6 +23,8 @@ const makePage = () => {
   recentPostsHeadline.className = "headerOne";
 
   let carouselDiv = document.createElement("div");
+  carouselDiv.className =
+    "flex flex-col justify-center items-center marginBotTop";
 
   let headlineContainerTwo = document.createElement("div");
   headlineContainerTwo.className = "headlineContainer flex justify-center";
@@ -42,36 +45,71 @@ const makePage = () => {
   headlineContainerOne.appendChild(recentPostsHeadline);
   headlineContainerTwo.appendChild(allPostsHeadline);
 
-  makeBlogPostGrid(blogPostGrid)
+  makeCarousel(carouselDiv);
+  makeBlogPostGrid(blogPostGrid);
+};
+
+const makeCarousel = async (carouselDiv) => {
+  const blogs = await doFetch("GET");
+
+  const latestPosts = blogs.slice(0, 3);
+
+  let leftButton = document.createElement("img");
+  leftButton.src = "/pictures/Left.png";
+  leftButton.id = "prevBtn";
+  leftButton.className = "carouselButtons position-left cursor prevBtn";
+
+  let rightButton = document.createElement("img");
+  rightButton.src = "/pictures/Right.png";
+  rightButton.id = "nextBtn";
+  rightButton.className = "carouselButtons position-right cursor nextBtn";
+
+  let dots = document.createElement("div");
+  dots.id = "slide-indicators";
+  dots.className = "slide-indicators";
+
+  let carouselImgs = document.createElement("div")
+  carouselImgs.className = "carouselImageContainer"
+
+
+
+  carouselDiv.append(leftButton, rightButton, carouselImgs, dots);
+
+  latestPosts.forEach((blog) => {
+    let image = document.createElement("img")
+    image.src = blog.media.url
+    image.alt = blog.media.alt
+    image.className = "carouselImage visible"
+
+    carouselImgs.appendChild(image)
+  });
+
+  carousel();
 };
 
 const makeBlogPostGrid = async (container) => {
-    // let blogs = await fetchBlogs()
-    const blogs = await doFetch("GET")
-    blogs.sort((a,b) => new Date(b.created) - new Date(a.created))
-  console.log(blogs);
-    blogs.forEach(blog => {
-        let imageBox = document.createElement("div")
-        imageBox.className = "postImageBox flex justify-center items-center"
+  // let blogs = await fetchBlogs()
+  const blogs = await doFetch("GET");
+  blogs.sort((a, b) => new Date(b.created) - new Date(a.created));
+  blogs.forEach((blog) => {
+    let imageBox = document.createElement("div");
+    imageBox.className = "postImageBox flex items-center justify-center";
 
-        let image = document.createElement("img")
-        image.src = blog.media.url;
-        image.alt = "blog Image"
-        image.className = "postGridImage cursor"
-        image.addEventListener("click", () => {
-            window.location.href = "/post/index.html?" + blog.id
-        })
-
-        let title = document.createElement("h2")
-        title.innerText = blog.title
-        title.className = "headerTwo imageTitle cursor"
-
-        container.appendChild(imageBox)
-        imageBox.append(image, title)
+    let image = document.createElement("img");
+    image.src = blog.media.url;
+    image.alt = "blog Image";
+    image.className = "postGridImage cursor";
+    image.addEventListener("click", () => {
+      window.location.href = "/post/index.html?" + blog.id;
     });
 
-    console.log(blogs);
-};
+    let title = document.createElement("h2");
+    title.innerText = blog.title;
+    title.className = "headerTwo imageTitle cursor";
 
+    container.appendChild(imageBox);
+    imageBox.append(image, title);
+  });
+};
 
 runPage();

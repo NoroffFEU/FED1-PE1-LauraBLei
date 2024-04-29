@@ -124,3 +124,7 @@ p{
 .position-right {
   align-self: flex-end;
 }
+
+.position-left {
+  align-self: flex-start;
+}

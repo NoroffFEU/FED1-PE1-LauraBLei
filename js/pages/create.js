@@ -115,7 +115,7 @@ const makeForms = (container, imageBox) => {
             method: "POST",
             headers: {
                 "content-Type":"application/json",
-                "Authorization": "Insert Access key"
+                "Authorization": "bearer insert token here"
             },
             body: JSON.stringify(postData)
         })

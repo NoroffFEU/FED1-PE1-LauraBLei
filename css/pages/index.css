@@ -20,3 +20,35 @@
 .imageTitle {
   position: absolute;
 }
+
+
+
+/*---------------Carousel--------------*/
+.carouselImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carouselContainer {
+position: absolute;
+margin: 20px 0 20px 0;
+}
+
+.carouselImageContainer {
+width: 100%;
+max-height: 500px;
+overflow: hidden;
+}
+
+.carouselButtons {
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
