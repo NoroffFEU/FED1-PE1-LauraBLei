@@ -1,7 +1,7 @@
 import { makeHeader } from "../components/header.js";
 import { makeFooter } from "../components/footer.js";
 import { doFetch } from "../components/fetch.js";
-import { carousel } from "../../carousel.js";
+import { carousel } from "../components/carousel.js";
 
 const runPage = async () => {
   const blogs = await doFetch("GET","https://v2.api.noroff.dev/blog/posts/Tompe");
