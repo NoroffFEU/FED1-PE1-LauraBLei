@@ -1,4 +1,4 @@
-import { doFetch } from "/js/components/fetch.js";
+import { doFetch } from "./js/components/fetch.js";
 
 export const handleRegistration = () => {
     let form = document.getElementById("registrationForm")

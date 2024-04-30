@@ -21,7 +21,7 @@ const desktopHeader = () => {
 
   let createPost = document.createElement("a");
   createPost.innerText = "+ Create Post";
-  createPost.href = "../post/create.html"
+  createPost.href = "./post/create.html"
   createPost.className = "headerText margin cursor";
   if(userInfo){
     createPost.style.display = "block"
@@ -32,7 +32,7 @@ const desktopHeader = () => {
   let home = document.createElement("a");
   home.innerText = "Home";
   home.className = "headerText margin cursor";
-  home.href = "../index.html";
+  home.href = "./index.html";
 
   let logOut = document.createElement("button");
   logOut.innerText = "Log Out";
@@ -78,7 +78,7 @@ const tabletHeader = () => {
   menuButton.className = "menuButton headerText";
 
   let menuImg = document.createElement("img");
-  menuImg.src = "../pictures/Menu.png";
+  menuImg.src = "./pictures/Menu.png";
 
   let ul = document.createElement("ul");
   ul.className = "boxMenu";

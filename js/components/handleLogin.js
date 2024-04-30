@@ -1,4 +1,4 @@
-import { doFetch } from "/js/components/fetch.js";
+import { doFetch } from "./js/components/fetch.js";
 
 export const handleLogIn = () => {
     let form = document.getElementById("logInForm")
@@ -18,7 +18,7 @@ export const handleLogIn = () => {
         console.log(response);
 
         localStorage.setItem("userInfo",JSON.stringify(response))
-        window.location.href = "../index.html?"
+        window.location.href = "./index.html?"
     })
 
 }

@@ -29,7 +29,7 @@ termsAndConditions.innerText = "Terms And Conditions"
 termsAndConditions.className = "footerText"
 
 let logo = document.createElement("img")
-logo.src = "../pictures/Logo.png"
+logo.src = "./pictures/Logo.png"
 logo.className = "footerLogo"
 
 let aboutUsBox = document.createElement("div")
