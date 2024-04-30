@@ -14,7 +14,7 @@ const desktopHeader = () => {
   let logo = document.createElement("img");
   logo.src = "./pictures/Logo.png";
   logo.className = "cursor";
-  logo.addEventListener('click', () => window.location.href = "../index.html")
+  logo.addEventListener('click', () => window.location.href = "./index.html")
 
   let nav = document.createElement("nav");
   nav.className = "justify-evenly header-gap flex";
@@ -55,7 +55,7 @@ const desktopHeader = () => {
   }
 
   logIn.className = "headerText margin cursor";
-  logIn.href = "../account/login.html";
+  logIn.href = "./account/login.html";
 
   header.appendChild(container);
   container.append(logo, nav);
@@ -69,7 +69,7 @@ const tabletHeader = () => {
   container.className = "flex between items-center tabletHeader";
 
   let logo = document.createElement("img");
-  logo.src = "../pictures/Logo.png";
+  logo.src = "./pictures/Logo.png";
   logo.className = "cursor";
 
   let details = document.createElement("details");
