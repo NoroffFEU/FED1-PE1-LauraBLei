@@ -9,10 +9,10 @@ const runPage = () => {
 };
 
 const makePage = async () => {
-  const id = window.location.search.split("?")
-  console.log(id[1]);
+  const id = window.location.search.slice(1)
+  console.log(id);
 
-  let blog = await doFetch("GET", "https://v2.api.noroff.dev/blog/posts/Tompe/"+id[1])
+  let blog = await doFetch("GET", "https://v2.api.noroff.dev/blog/posts/Tompe/"+id)
   console.log(blog);
 
   let main = document.querySelector("main");
@@ -35,6 +35,9 @@ const makePage = async () => {
   }else{
     editButton.style.display = "none"
   }
+  editButton.onclick = () => {
+    window.location.href = "../post/edit.html" + "?" + id
+}
 
   let postTitle = document.createElement("h1");
   postTitle.innerText = blog.title;
