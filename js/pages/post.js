@@ -12,7 +12,7 @@ const makePage = async () => {
   const id = window.location.search.split("?")
   console.log(id[1]);
 
-  let blog = await doFetch("GET", "/"+id[1])
+  let blog = await doFetch("GET", "https://v2.api.noroff.dev/blog/posts/Tompe/"+id[1])
   console.log(blog);
 
   let main = document.querySelector("main");
@@ -30,6 +30,11 @@ const makePage = async () => {
   let editButton = document.createElement("button");
   editButton.innerText = "Edit";
   editButton.className = "smallBrownButton position-right";
+  if(localStorage.getItem("userInfo")){
+    editButton.style.display = "block"
+  }else{
+    editButton.style.display = "none"
+  }
 
   let postTitle = document.createElement("h1");
   postTitle.innerText = blog.title;

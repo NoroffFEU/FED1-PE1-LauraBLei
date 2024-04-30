@@ -3,13 +3,14 @@ import { makeFooter } from "../components/footer.js";
 import { doFetch } from "../components/fetch.js";
 import { carousel } from "../../carousel.js";
 
-const runPage = () => {
-  makePage();
+const runPage = async () => {
+  const blogs = await doFetch("GET","https://v2.api.noroff.dev/blog/posts/Tompe");
+  makePage(blogs);
   makeHeader();
   makeFooter();
 };
 
-const makePage = () => {
+const makePage = (blogs) => {
   let main = document.querySelector("main");
 
   let container = document.createElement("div");
@@ -45,12 +46,11 @@ const makePage = () => {
   headlineContainerOne.appendChild(recentPostsHeadline);
   headlineContainerTwo.appendChild(allPostsHeadline);
 
-  makeCarousel(carouselDiv);
-  makeBlogPostGrid(blogPostGrid);
+  makeCarousel(carouselDiv,blogs);
+  makeBlogPostGrid(blogPostGrid, blogs);
 };
 
-const makeCarousel = async (carouselDiv) => {
-  const blogs = await doFetch("GET","https://v2.api.noroff.dev/blog/posts/Laura");
+const makeCarousel = async (carouselDiv, blogs) => {
 
   const latestPosts = blogs.slice(0, 3);
 
@@ -87,10 +87,7 @@ const makeCarousel = async (carouselDiv) => {
   carousel();
 };
 
-const makeBlogPostGrid = async (container) => {
-  // let blogs = await fetchBlogs()
-  const blogs = await doFetch("GET","https://v2.api.noroff.dev/blog/posts/Tompe");
-
+const makeBlogPostGrid = async (container, blogs) => {
 
   blogs.sort((a, b) => new Date(b.created) - new Date(a.created));
   blogs.forEach((blog) => {

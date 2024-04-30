@@ -14,6 +14,7 @@ const desktopHeader = () => {
   let logo = document.createElement("img");
   logo.src = "../pictures/Logo.png";
   logo.className = "cursor";
+  logo.addEventListener('click', () => window.location.href = "../index.html")
 
   let nav = document.createElement("nav");
   nav.className = "justify-evenly header-gap flex";

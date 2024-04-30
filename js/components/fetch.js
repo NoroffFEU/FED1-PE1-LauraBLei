@@ -1,9 +1,8 @@
-//  Post url: https://v2.api.noroff.dev/blog/posts/Laura  //
+//  Post url: https://v2.api.noroff.dev/blog/posts/Tompe  //
 //  Register url: https://v2.api.noroff.dev/auth/register  //
 
 export const doFetch = async (method, noroffapi, body) => {
   console.log("Doing fetch call towards: ", noroffapi);
-
   let userInfo = JSON.parse(localStorage.getItem("userInfo"));
   let accessToken = ""
   if(userInfo){
