@@ -55,12 +55,12 @@ const makeCarousel = async (carouselDiv, blogs) => {
   const latestPosts = blogs.slice(0, 3);
 
   let leftButton = document.createElement("img");
-  leftButton.src = "/pictures/Left.png";
+  leftButton.src = "./pictures/Left.png";
   leftButton.id = "prevBtn";
   leftButton.className = "carouselButtons position-left cursor prevBtn";
 
   let rightButton = document.createElement("img");
-  rightButton.src = "/pictures/Right.png";
+  rightButton.src = "./pictures/Right.png";
   rightButton.id = "nextBtn";
   rightButton.className = "carouselButtons position-right cursor nextBtn";
 
