@@ -12,7 +12,7 @@ const desktopHeader = () => {
   container.className = "flex between items-center desktopHeader";
 
   let logo = document.createElement("img");
-  logo.src = "./pictures/Logo.png";
+  logo.src = "FED1-PE1-LauraBLei/pictures/Logo.png";
   logo.className = "cursor";
   logo.addEventListener('click', () => window.location.href = "./index.html")
 
