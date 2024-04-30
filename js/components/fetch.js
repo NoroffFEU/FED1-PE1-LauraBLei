@@ -1,24 +1,28 @@
-export const doFetch = async (method, path = "", body) => {
-    const noroffapi = "https://v2.api.noroff.dev/blog/posts/Laura"+path
+//  Post url: https://v2.api.noroff.dev/blog/posts/Laura  //
+//  Register url: https://v2.api.noroff.dev/auth/register  //
 
-    console.log("Doing fetch call towards: ", noroffapi);
-  
-    try {
-      const response = await fetch(noroffapi, {
-        method: method,
-        headers: {
-          headers: {
-            "content-Type":"application/json",
-            "Authorization": "Insert Access key"
-        },
-        },
-        body: JSON.stringify(body)
-      });
-  
-      const data = await response.json()
-      return data.data
-    } catch (err) {
-      console.log(err);
-    }
+export const doFetch = async (method, noroffapi, body) => {
+  console.log("Doing fetch call towards: ", noroffapi);
+
+  let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  let accessToken = ""
+  if(userInfo){
+    accessToken = userInfo.accessToken
   }
-  
+  try {
+    const response = await fetch(noroffapi, {
+      method: method,
+      headers: {
+        "content-Type": "application/json",
+        Authorization: "Bearer " + accessToken,
+      },
+      body: JSON.stringify(body),
+    });
+
+    const data = await response.json();
+    console.log(data);
+    return data.data;
+  } catch (err) {
+    console.log(err);
+  }
+};

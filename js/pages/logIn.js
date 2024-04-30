@@ -1,10 +1,12 @@
 import { makeHeader } from "../components/header.js";
 import { makeFooter } from "../components/footer.js";
+import { handleLogIn } from "../components/handleLogin.js";
 
 const runPage = () => {
     makePage()
     makeHeader()
     makeFooter()
+    handleLogIn()
 }
 
 const makePage = () => {
@@ -19,19 +21,26 @@ const makePage = () => {
 
     let form = document.createElement("form")
     form.className = "form flex flex-col items-center"
+    form.id = "logInForm"
 
 
     let email = document.createElement("input")
     email.type = "email"
     email.id = "email"
+    email.name = "email"
     email.placeholder = "email"
     email.className = "headerTwo loginForms"
+    email.required = true
+    email.autocomplete = "email"
 
     let password = document.createElement("input")
     password.type = "password"
     password.id = "password"
+    password.name ="password"
     password.placeholder = "Password"
     password.className = "headerTwo loginForms"
+    password.autocomplete = "current-password"
+    password.required = true
     
     let button = document.createElement("button")
     button.type = "submit"

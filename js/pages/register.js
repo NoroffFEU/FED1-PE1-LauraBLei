@@ -1,10 +1,12 @@
 import { makeHeader } from "../components/header.js";
 import { makeFooter } from "../components/footer.js";
+import { handleRegistration } from "../components/handleRegistration.js";
 
 const runPage = () => {
     makePage()
     makeHeader()
     makeFooter()
+    handleRegistration()
 }
 
 const makePage = () => {
@@ -19,28 +21,37 @@ const makePage = () => {
 
     let form = document.createElement("form")
     form.className = "form flex flex-col items-center"
+    form.id = "registrationForm"
 
     let email = document.createElement("input")
     email.type = "email"
     email.id = "email"
+    email.name = "email"
     email.placeholder = "email"
     email.className = "headerTwo loginForms"
+    email.required = true
 
     let username = document.createElement("input")
     username.type = "text"
+    username.name = "name"
     username.id = "username"
     username.placeholder = "Username"
     username.className = "headerTwo loginForms"
+    username.autocomplete = "username"
+    username.required = true
 
     let password = document.createElement("input")
     password.type = "password"
     password.id = "password"
+    password.name = "password"
     password.placeholder = "Password"
     password.className = "headerTwo loginForms"
+    password.autocomplete = "current-password"
+    password.required = true
     
     let button = document.createElement("button")
     button.type = "submit"
-    button.innerText = "Log In"
+    button.innerText = "Register"
     button.className = "brownButton"
 
     let registerButton = document.createElement("a")

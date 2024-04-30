@@ -45,10 +45,11 @@ main {
 .headerText {
   color: var(--black);
   font-family: "Playfair Display SC";
-  font-size: 40px;
+  font-size: 35px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  text-decoration: none;
 }
 
 .headerOne {

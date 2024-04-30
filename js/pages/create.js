@@ -1,5 +1,6 @@
 import { makeHeader } from "../components/header.js";
 import { makeFooter } from "../components/footer.js";
+import { doFetch } from "../components/fetch.js";
 
 const runPage = () => {
   makePage()
@@ -68,8 +69,7 @@ const makeForms = (container, imageBox) => {
   titleInput.type = "text";
   titleInput.id = "title";
   titleInput.name = "title";
-  titleInput.placeholder = "Insert text here..";
-  titleInput.defaultValue = "title number 1";
+  titleInput.placeholder = "Insert text here.."
 
   let textFormBox = document.createElement("div");
 
@@ -78,7 +78,6 @@ const makeForms = (container, imageBox) => {
   textInput.id = "text";
   textInput.name = "text";
   textInput.placeholder = "Add text here..";
-  textInput.defaultValue = "Test number 1";
 
   let submitButton = document.createElement("input");
   submitButton.type = "submit";
@@ -108,23 +107,9 @@ const makeForms = (container, imageBox) => {
       }
       // Add other form fields as needed
     };
-    console.log("calling Noroff with body", postData);
-    try {
-
-        let response = await fetch("https://v2.api.noroff.dev/blog/posts/Laura", {
-            method: "POST",
-            headers: {
-                "content-Type":"application/json",
-                "Authorization": "bearer insert token here"
-            },
-            body: JSON.stringify(postData)
-        })
-        
-        console.log(response);
-    } catch (error) {
-        console.log("Error: ", error);
-    }
-    console.log("fetch successfull");
+    let userInfo = JSON.parse(localStorage.getItem("userInfo"))
+      await doFetch("POST", "https://v2.api.noroff.dev/blog/posts/"+ userInfo.name, postData)
+    
   });
 };
 

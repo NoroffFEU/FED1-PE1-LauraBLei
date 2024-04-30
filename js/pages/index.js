@@ -50,7 +50,7 @@ const makePage = () => {
 };
 
 const makeCarousel = async (carouselDiv) => {
-  const blogs = await doFetch("GET");
+  const blogs = await doFetch("GET","https://v2.api.noroff.dev/blog/posts/Laura");
 
   const latestPosts = blogs.slice(0, 3);
 
@@ -89,7 +89,9 @@ const makeCarousel = async (carouselDiv) => {
 
 const makeBlogPostGrid = async (container) => {
   // let blogs = await fetchBlogs()
-  const blogs = await doFetch("GET");
+  const blogs = await doFetch("GET","https://v2.api.noroff.dev/blog/posts/Tompe");
+
+
   blogs.sort((a, b) => new Date(b.created) - new Date(a.created));
   blogs.forEach((blog) => {
     let imageBox = document.createElement("div");
