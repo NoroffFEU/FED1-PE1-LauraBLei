@@ -17,7 +17,12 @@ const desktopHeader = (isFrontPage) => {
   container.className = "flex between items-center desktopHeader";
 
   let logo = document.createElement("img");
-  logo.src = "/public/Logo.png";
+  if(isFrontPage){
+    logo.src = "./public/Logo.png";
+  }else{
+    logo.src = "../public/Logo.png";
+
+  }
   logo.className = "cursor";
   logo.addEventListener('click', () => window.location.href = "index.html")
 
@@ -43,7 +48,12 @@ const desktopHeader = (isFrontPage) => {
   let home = document.createElement("a");
   home.innerText = "Home";
   home.className = "headerText margin cursor";
-  home.href =  "../index.html";
+  if(isFrontPage){
+    home.href =  "index.html";
+  }else{
+    home.href =  "../index.html";
+  }
+
 
   let logOut = document.createElement("button");
   logOut.innerText = "Log Out";
