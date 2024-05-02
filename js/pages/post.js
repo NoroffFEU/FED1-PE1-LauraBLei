@@ -36,7 +36,7 @@ const makePage = async () => {
     editButton.style.display = "none"
   }
   editButton.onclick = () => {
-    window.location.href = "./post/edit.html" + "?" + id
+    window.location.href = window.location.origin + "/post/edit.html" + "?" + id
 }
 
   let postTitle = document.createElement("h1");

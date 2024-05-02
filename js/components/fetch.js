@@ -25,3 +25,5 @@ export const doFetch = async (method, noroffapi, body) => {
     console.log(err);
   }
 };
+
+

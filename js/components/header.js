@@ -14,14 +14,14 @@ const desktopHeader = () => {
   let logo = document.createElement("img");
   logo.src = "/public/Logo.png";
   logo.className = "cursor";
-  logo.addEventListener('click', () => window.location.href = "./index.html")
+  logo.addEventListener('click', () => window.location.href = window.location.origin + "/index.html")
 
   let nav = document.createElement("nav");
   nav.className = "justify-evenly header-gap flex";
 
   let createPost = document.createElement("a");
   createPost.innerText = "+ Create Post";
-  createPost.href = "./post/create.html"
+  createPost.href = window.location.origin + "/post/create.html"
   createPost.className = "headerText margin cursor";
   if(userInfo){
     createPost.style.display = "block"
@@ -32,7 +32,7 @@ const desktopHeader = () => {
   let home = document.createElement("a");
   home.innerText = "Home";
   home.className = "headerText margin cursor";
-  home.href = "./index.html";
+  home.href = window.location.origin +  "/index.html";
 
   let logOut = document.createElement("button");
   logOut.innerText = "Log Out";
@@ -55,7 +55,7 @@ const desktopHeader = () => {
   }
 
   logIn.className = "headerText margin cursor";
-  logIn.href = "./account/login.html";
+  logIn.href = window.location.origin +"/account/login.html";
 
   header.appendChild(container);
   container.append(logo, nav);

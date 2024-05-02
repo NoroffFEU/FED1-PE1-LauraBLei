@@ -57,11 +57,11 @@ const makePage = () => {
     let logInButton = document.createElement("a")
     logInButton.innerText = "Log in"
     logInButton.className = "alternativeHeadline"
-    logInButton.href = "./account/login.html"
+    logInButton.href = window.location.origin + "/account/login.html"
 
     main.appendChild(container)
     container.append(h1, form)
-    form.append(email, username, password, button, registerButton)
+    form.append(email, username, password, button, logInButton)
 }
 
 runPage()

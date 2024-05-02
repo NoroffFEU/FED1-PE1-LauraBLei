@@ -55,12 +55,12 @@ const makeCarousel = async (carouselDiv, blogs) => {
   const latestPosts = blogs.slice(0, 3);
 
   let leftButton = document.createElement("img");
-  leftButton.src = "./pictures/Left.png";
+  leftButton.src = "./public/Left.png";
   leftButton.id = "prevBtn";
   leftButton.className = "carouselButtons position-left cursor prevBtn";
 
   let rightButton = document.createElement("img");
-  rightButton.src = "./pictures/Right.png";
+  rightButton.src = "./public/Right.png";
   rightButton.id = "nextBtn";
   rightButton.className = "carouselButtons position-right cursor nextBtn";
 
@@ -99,7 +99,7 @@ const makeBlogPostGrid = async (container, blogs) => {
     image.alt = "blog Image";
     image.className = "postGridImage cursor";
     image.addEventListener("click", () => {
-      window.location.href = "/post/index.html?" + blog.id;
+      window.location.href = window.location.origin + "/post/index.html?" + blog.id;
     });
 
     let title = document.createElement("h2");
