@@ -107,7 +107,7 @@ const makeForms = (container, imageBox, blog, id) => {
         const result = window.confirm("Are you sure you want to delete this?")
         if(result){
             doFetch("DELETE","https://v2.api.noroff.dev/blog/posts/"+ userInfo.name +"/"+id)
-            window.location.href = "./index.html"
+            window.location.href = "/index.html"
         }
   }
 
@@ -137,7 +137,7 @@ const makeForms = (container, imageBox, blog, id) => {
         await doFetch("PUT", "https://v2.api.noroff.dev/blog/posts/"+ userInfo.name +"/"+id, postData)
     
 
-    window.location.href = "./post/index.html" + "?" + id
+    window.location.href = "/post/index.html" + "?" + id
     
   });
 };
