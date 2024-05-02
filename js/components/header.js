@@ -1,7 +1,7 @@
 export const makeHeader = () => {
   let isFrontPage = true
   desktopHeader(isFrontPage);
-  tabletHeader();
+  tabletHeader(isFrontPage);
 };
 
 const desktopHeader = (isFrontPage) => {
@@ -77,7 +77,7 @@ const desktopHeader = (isFrontPage) => {
   nav.append(createPost, home, logIn, logOut);
 };
 
-const tabletHeader = () => {
+const tabletHeader = (isFrontPage) => {
   let header = document.querySelector("header");
 
   let container = document.createElement("div");
