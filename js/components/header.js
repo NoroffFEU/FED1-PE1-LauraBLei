@@ -4,6 +4,10 @@ export const makeHeader = () => {
 };
 
 const desktopHeader = () => {
+  let isFrontPage = true
+  if(window.location.pathname.includes("post")||window.location.pathname.includes("account")) {
+    isFrontPage = false
+  }
   let userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
   let header = document.querySelector("header");
@@ -14,14 +18,20 @@ const desktopHeader = () => {
   let logo = document.createElement("img");
   logo.src = "/public/Logo.png";
   logo.className = "cursor";
-  logo.addEventListener('click', () => window.location.href = "/index.html")
+  logo.addEventListener('click', () => window.location.href = "index.html")
 
   let nav = document.createElement("nav");
   nav.className = "justify-evenly header-gap flex";
 
   let createPost = document.createElement("a");
   createPost.innerText = "+ Create Post";
-  createPost.href = "/post/create.html"
+  if(isFrontPage){
+    createPost.href = "post/create.html"
+  }else{
+    createPost.href = "../post/create.html"
+  }
+
+
   createPost.className = "headerText margin cursor";
   if(userInfo){
     createPost.style.display = "block"
@@ -32,7 +42,7 @@ const desktopHeader = () => {
   let home = document.createElement("a");
   home.innerText = "Home";
   home.className = "headerText margin cursor";
-  home.href =  "/index.html";
+  home.href =  "../index.html";
 
   let logOut = document.createElement("button");
   logOut.innerText = "Log Out";
@@ -55,7 +65,11 @@ const desktopHeader = () => {
   }
 
   logIn.className = "headerText margin cursor";
-  logIn.href = "/account/login.html";
+  if(isFrontPage){
+    logIn.href = "account/login.html";
+  }else{
+    logIn.href = "../account/login.html";
+  }
 
   header.appendChild(container);
   container.append(logo, nav);
@@ -69,7 +83,11 @@ const tabletHeader = () => {
   container.className = "flex between items-center tabletHeader";
 
   let logo = document.createElement("img");
-  logo.src = "./pictures/Logo.png";
+  if(isFrontPage){
+    logo.src = "./pictures/Logo.png";
+  }else{
+    logo.src = "../pictures/Logo.png";
+  }
   logo.className = "cursor";
 
   let details = document.createElement("details");

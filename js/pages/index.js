@@ -99,7 +99,7 @@ const makeBlogPostGrid = async (container, blogs) => {
     image.alt = "blog Image";
     image.className = "postGridImage cursor";
     image.addEventListener("click", () => {
-      window.location.href =  "/post/index.html?" + blog.id;
+      window.location.href =  "post/index.html?" + blog.id;
     });
 
     let title = document.createElement("h2");
