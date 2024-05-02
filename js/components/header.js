@@ -1,10 +1,11 @@
 export const makeHeader = () => {
-  desktopHeader();
+  let isFrontPage = true
+  desktopHeader(isFrontPage);
   tabletHeader();
 };
 
 const desktopHeader = () => {
-  let isFrontPage = true
+  
   if(window.location.pathname.includes("post")||window.location.pathname.includes("account")) {
     isFrontPage = false
   }
