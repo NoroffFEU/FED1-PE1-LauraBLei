@@ -24,7 +24,14 @@ const desktopHeader = (isFrontPage) => {
 
   }
   logo.className = "cursor";
-  logo.addEventListener('click', () => window.location.href = "../index.html")
+  
+  logo.addEventListener('click', () =>{
+    if(isFrontPage){
+      window.location.href = "index.html"
+
+    }else{
+      window.location.href = "../index.html"})
+    }
 
   let nav = document.createElement("nav");
   nav.className = "justify-evenly header-gap flex";
