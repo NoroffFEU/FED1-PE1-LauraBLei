@@ -30,8 +30,8 @@ const desktopHeader = (isFrontPage) => {
       window.location.href = "index.html"
 
     }else{
-      window.location.href = "../index.html"})
-    }
+      window.location.href = "../index.html"}
+    })
 
   let nav = document.createElement("nav");
   nav.className = "justify-evenly header-gap flex";
