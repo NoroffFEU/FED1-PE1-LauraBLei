@@ -22,7 +22,7 @@ export const handleLogIn = () => {
         console.log(response);
 
         localStorage.setItem("userInfo",JSON.stringify(response))
-        window.location.href = "/index.html"
+        window.location.href = "index.html"
     })
 
 }
