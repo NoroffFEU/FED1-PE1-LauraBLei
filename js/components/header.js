@@ -5,8 +5,8 @@ export const makeHeader = () => {
 };
 
 const desktopHeader = (isFrontPage) => {
-  
-  if(window.location.pathname.includes("post")||window.location.pathname.includes("account")) {
+
+  if (window.location.pathname.includes("post") || window.location.pathname.includes("account")) {
     isFrontPage = false
   }
   let userInfo = JSON.parse(localStorage.getItem("userInfo"));
@@ -17,48 +17,49 @@ const desktopHeader = (isFrontPage) => {
   container.className = "flex between items-center desktopHeader";
 
   let logo = document.createElement("img");
-  if(isFrontPage){
+  if (isFrontPage) {
     logo.src = "./public/Logo.png";
-  }else{
+  } else {
     logo.src = "../public/Logo.png";
 
   }
   logo.className = "cursor";
-  
-  logo.addEventListener('click', () =>{
-    if(isFrontPage){
+
+  logo.addEventListener('click', () => {
+    if (isFrontPage) {
       window.location.href = "index.html"
 
-    }else{
-      window.location.href = "../index.html"}
-    })
+    } else {
+      window.location.href = "../index.html"
+    }
+  })
 
   let nav = document.createElement("nav");
   nav.className = "justify-evenly header-gap flex";
 
   let createPost = document.createElement("a");
   createPost.innerText = "+ Create Post";
-  if(isFrontPage){
+  if (isFrontPage) {
     createPost.href = "post/create.html"
-  }else{
+  } else {
     createPost.href = "../post/create.html"
   }
 
 
   createPost.className = "headerText margin cursor";
-  if(userInfo){
+  if (userInfo) {
     createPost.style.display = "block"
-  }else {
+  } else {
     createPost.style.display = "none"
   }
 
   let home = document.createElement("a");
   home.innerText = "Home";
   home.className = "headerText margin cursor";
-  if(isFrontPage){
-    home.href =  "index.html";
-  }else{
-    home.href =  "../index.html";
+  if (isFrontPage) {
+    home.href = "index.html";
+  } else {
+    home.href = "../index.html";
   }
 
 
@@ -77,15 +78,15 @@ const desktopHeader = (isFrontPage) => {
   if (userInfo) {
     logIn.style.display = "none"
     logOut.style.display = "block"
-    } else {
+  } else {
     logIn.style.display = "block"
     logOut.style.display = "none"
   }
 
   logIn.className = "headerText margin cursor";
-  if(isFrontPage){
+  if (isFrontPage) {
     logIn.href = "account/login.html";
-  }else{
+  } else {
     logIn.href = "../account/login.html";
   }
 
@@ -101,9 +102,9 @@ const tabletHeader = (isFrontPage) => {
   container.className = "flex between items-center tabletHeader";
 
   let logo = document.createElement("img");
-  if(isFrontPage){
+  if (isFrontPage) {
     logo.src = "./pictures/Logo.png";
-  }else{
+  } else {
     logo.src = "../pictures/Logo.png";
   }
   logo.className = "cursor";
