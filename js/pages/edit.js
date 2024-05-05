@@ -137,7 +137,7 @@ const makeForms = (container, imageBox, blog, id) => {
         await doFetch("PUT", "https://v2.api.noroff.dev/blog/posts/"+ userInfo.name +"/"+id, postData)
     
 
-    window.location.href = "post/index.html" + "?" + id
+    window.location.href = "index.html" + "?" + id
     
   });
 };
