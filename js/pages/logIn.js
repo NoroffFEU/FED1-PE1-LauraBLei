@@ -50,7 +50,7 @@ const makePage = () => {
     let registerButton = document.createElement("a")
     registerButton.innerText = "Register"
     registerButton.className = "alternativeHeadline"
-    registerButton.href =  "account/register.html"
+    registerButton.href =  "./register.html"
 
     main.appendChild(container)
     container.append(h1, form)
