@@ -105,6 +105,9 @@ const makeBlogPostGrid = async (container, blogs) => {
     let title = document.createElement("h2");
     title.innerText = blog.title;
     title.className = "headerTwo imageTitle cursor";
+    title.addEventListener("click", () => {
+      window.location.href =  "post/index.html?" + blog.id;
+    });
 
     container.appendChild(imageBox);
     imageBox.append(image, title);
