@@ -1,9 +1,13 @@
 export const makeFooter = () => {
-    desktopVersion()
-    tabletVersion()
+    let isFrontPage = true
+    if (window.location.pathname.includes("post") || window.location.pathname.includes("account")) {
+        isFrontPage = false
+      }
+    desktopVersion(isFrontPage)
+    tabletVersion(isFrontPage)
 }
 
-const desktopVersion = () => {
+const desktopVersion = (isFrontPage) => {
 let footer = document.querySelector("footer")
 
 let container = document.createElement("div")
@@ -29,7 +33,11 @@ termsAndConditions.innerText = "Terms And Conditions"
 termsAndConditions.className = "footerText"
 
 let logo = document.createElement("img")
-logo.src = "./pictures/Logo.png"
+if(isFrontPage){
+    logo.src = "./public/Logo.png"
+}else{
+    logo.src = "../public/Logo.png"
+}
 logo.className = "footerLogo"
 
 let aboutUsBox = document.createElement("div")

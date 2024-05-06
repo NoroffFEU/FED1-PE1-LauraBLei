@@ -1,14 +1,13 @@
 export const makeHeader = () => {
   let isFrontPage = true
+  if (window.location.pathname.includes("post") || window.location.pathname.includes("account")) {
+    isFrontPage = false
+  }
   desktopHeader(isFrontPage);
   tabletHeader(isFrontPage);
 };
 
 const desktopHeader = (isFrontPage) => {
-
-  if (window.location.pathname.includes("post") || window.location.pathname.includes("account")) {
-    isFrontPage = false
-  }
   let userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
   let header = document.querySelector("header");
@@ -103,9 +102,9 @@ const tabletHeader = (isFrontPage) => {
 
   let logo = document.createElement("img");
   if (isFrontPage) {
-    logo.src = "./pictures/Logo.png";
+    logo.src = "./public/Logo.png";
   } else {
-    logo.src = "../pictures/Logo.png";
+    logo.src = "../public/Logo.png";
   }
   logo.className = "cursor";
 
@@ -115,7 +114,11 @@ const tabletHeader = (isFrontPage) => {
   menuButton.className = "menuButton headerText";
 
   let menuImg = document.createElement("img");
-  menuImg.src = "./pictures/Menu.png";
+  if(isFrontPage){
+    menuImg.src = "./public/Menu.png";
+  }else{
+    menuImg.src = "../public/Menu.png";
+  }
 
   let ul = document.createElement("ul");
   ul.className = "boxMenu";
