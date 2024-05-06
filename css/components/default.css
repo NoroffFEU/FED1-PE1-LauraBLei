@@ -45,7 +45,7 @@ main {
 .headerText {
   color: var(--black);
   font-family: "Playfair Display SC";
-  font-size: 35px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -55,7 +55,7 @@ main {
 .headerOne {
   color: var(--White, #fff);
   font-family: "Playfair Display SC";
-  font-size: 50px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -64,7 +64,7 @@ main {
 .headerTwo {
   color: var(--white);
   font-family: "Playfair Display";
-  font-size: 35px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -73,7 +73,7 @@ main {
 .alternativeHeadline {
   color: var(--white);
   font-family: Playball;
-  font-size: 30px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -128,4 +128,8 @@ p{
 
 .position-left {
   align-self: flex-start;
+}
+
+.styles-none{
+  text-decoration: none;
 }

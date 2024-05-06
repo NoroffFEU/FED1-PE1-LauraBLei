@@ -22,7 +22,7 @@ const desktopHeader = (isFrontPage) => {
     logo.src = "../public/Logo.png";
 
   }
-  logo.className = "cursor";
+  logo.className = "cursor logo";
 
   logo.addEventListener('click', () => {
     if (isFrontPage) {
@@ -72,7 +72,7 @@ const desktopHeader = (isFrontPage) => {
   }
 
   let logIn = document.createElement("a");
-  logIn.innerText = "Log In"
+  logIn.innerText = "Login"
   logIn.classList.add = "visible"
   if (userInfo) {
     logIn.style.display = "none"

@@ -38,7 +38,7 @@ if(isFrontPage){
 }else{
     logo.src = "../public/Logo.png"
 }
-logo.className = "footerLogo"
+logo.className = "logo footerLogo"
 
 let aboutUsBox = document.createElement("div")
 aboutUsBox.className = "flex flex-col marginBotTop items-center aboutUsBox"

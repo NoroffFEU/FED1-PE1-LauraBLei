@@ -1,7 +1,7 @@
 .headlineContainer {
   width: 100%;
   background-color: var(--brown);
-  padding: 18px 0px 18px 0;
+  padding: 15px 0px 15px 0;
   flex-shrink: 0;
 }
 

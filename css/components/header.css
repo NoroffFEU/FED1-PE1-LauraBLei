@@ -33,6 +33,11 @@
     
 }
 
+.logo{
+    max-width: 200px;
+    height: auto;
+}
+
 @media screen and (max-width: 1200px) {
     .tabletHeader {
         display: flex;
