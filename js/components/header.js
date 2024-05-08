@@ -106,7 +106,7 @@ const tabletHeader = (isFrontPage) => {
   } else {
     logo.src = "../public/Logo.png";
   }
-  logo.className = "cursor";
+  logo.className = "cursor logo";
 
   let details = document.createElement("details");
 

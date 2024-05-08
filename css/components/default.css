@@ -133,3 +133,7 @@ p{
 .styles-none{
   text-decoration: none;
 }
+
+.font-medium{
+  font-size: 2vw;
+}

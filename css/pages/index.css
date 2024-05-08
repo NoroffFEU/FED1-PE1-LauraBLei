@@ -5,8 +5,18 @@
   flex-shrink: 0;
 }
 
+
+/*------------Grid-------------*/
+
+.blogPostGridContainer{
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
+  width: 100%;
+}
+
 .postImageBox {
-  max-width: 600px;
+  width: 100%;
   max-height: 200px;
   overflow: hidden;
 }
@@ -20,7 +30,6 @@
 .imageTitle {
   position: absolute;
 }
-
 
 
 /*---------------Carousel--------------*/

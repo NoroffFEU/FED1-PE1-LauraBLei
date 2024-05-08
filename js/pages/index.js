@@ -35,6 +35,7 @@ const makePage = (blogs) => {
   allPostsHeadline.className = "headerOne";
 
   let blogPostGrid = document.createElement("div");
+  blogPostGrid.className = "blogPostGridContainer"
 
   main.appendChild(container);
   container.append(
@@ -104,7 +105,7 @@ const makeBlogPostGrid = async (container, blogs) => {
 
     let title = document.createElement("h2");
     title.innerText = blog.title;
-    title.className = "headerTwo imageTitle cursor";
+    title.className = "headerTwo imageTitle cursor font-medium";
     title.addEventListener("click", () => {
       window.location.href =  "post/index.html?" + blog.id;
     });
