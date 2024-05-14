@@ -10,7 +10,6 @@
   padding: 0;
 }
 
-
 body {
   background-color: var(--black);
   display: flex;
@@ -20,7 +19,8 @@ body {
   min-height: 100vh;
 }
 
-header, footer {
+header,
+footer {
   background-color: var(--white);
   color: var(--black);
   width: 100%;
@@ -64,10 +64,12 @@ main {
 .headerTwo {
   color: var(--white);
   font-family: "Playfair Display";
-  font-size: 2rem;
+  font-size: clamp(14px, 2vw, 22px);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .alternativeHeadline {
@@ -79,15 +81,14 @@ main {
   line-height: normal;
 }
 
-
-p{
+p {
   font-family: "Playfair Display";
   font-size: 20px;
 }
 
 .footerText {
   font-family: "Playfair Display";
-  font-size: 25px; 
+  font-size: 25px;
 }
 
 .flex {
@@ -114,11 +115,11 @@ p{
   justify-content: space-evenly;
 }
 
-.cursor{
+.cursor {
   cursor: pointer;
 }
 
-.gap10{
+.gap10 {
   gap: 10px;
 }
 
@@ -130,10 +131,22 @@ p{
   align-self: flex-start;
 }
 
-.styles-none{
+.styles-none {
   text-decoration: none;
 }
 
-.font-medium{
-  font-size: 2vw;
+.width-100 {
+  width: 100%;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.object-fit {
+  object-fit: cover;
+}
+
+.shadow {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }

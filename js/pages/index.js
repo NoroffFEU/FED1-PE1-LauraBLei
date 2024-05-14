@@ -4,7 +4,10 @@ import { doFetch } from "../components/fetch.js";
 import { carousel } from "../components/carousel.js";
 
 const runPage = async () => {
-  const blogs = await doFetch("GET","https://v2.api.noroff.dev/blog/posts/Tompe");
+  const blogs = await doFetch(
+    "GET",
+    "https://v2.api.noroff.dev/blog/posts/Tompe"
+  );
   makePage(blogs);
   makeHeader();
   makeFooter();
@@ -25,7 +28,7 @@ const makePage = (blogs) => {
 
   let carouselDiv = document.createElement("div");
   carouselDiv.className =
-    "flex flex-col justify-center items-center marginBotTop";
+    "flex flex-col justify-center items-center marginBotTop width-100";
 
   let headlineContainerTwo = document.createElement("div");
   headlineContainerTwo.className = "headlineContainer flex justify-center";
@@ -35,7 +38,7 @@ const makePage = (blogs) => {
   allPostsHeadline.className = "headerOne";
 
   let blogPostGrid = document.createElement("div");
-  blogPostGrid.className = "blogPostGridContainer"
+  blogPostGrid.className = "blogPostGridContainer";
 
   main.appendChild(container);
   container.append(
@@ -47,12 +50,11 @@ const makePage = (blogs) => {
   headlineContainerOne.appendChild(recentPostsHeadline);
   headlineContainerTwo.appendChild(allPostsHeadline);
 
-  makeCarousel(carouselDiv,blogs);
+  makeCarousel(carouselDiv, blogs);
   makeBlogPostGrid(blogPostGrid, blogs);
 };
 
 const makeCarousel = async (carouselDiv, blogs) => {
-
   const latestPosts = blogs.slice(0, 3);
 
   let leftButton = document.createElement("img");
@@ -69,27 +71,53 @@ const makeCarousel = async (carouselDiv, blogs) => {
   dots.id = "slide-indicators";
   dots.className = "slide-indicators";
 
-  let carouselImgs = document.createElement("div")
-  carouselImgs.className = "carouselImageContainer"
+  let dot1 = document.createElement("span")
+  dot1.className ="dot active"
+
+  let dot2 = document.createElement("span")
+  dot2.className ="dot"
+
+  let dot3 = document.createElement("span")
+  dot3.className ="dot"
 
 
+  let carouselImgs = document.createElement("div");
+  carouselImgs.className = "width-100 heigt-100";
 
   carouselDiv.append(leftButton, rightButton, carouselImgs, dots);
+  dots.append(dot1,dot2,dot3)
 
   latestPosts.forEach((blog) => {
-    let image = document.createElement("img")
-    image.src = blog.media.url
-    image.alt = blog.media.alt
-    image.className = "carouselImage visible"
+    let carouselBox = document.createElement("div")
+    carouselBox.className = "carouselBox visible justify-center items-center carouselImageContainer shadow width-100"
+    let image = document.createElement("img");
+    image.src = blog.media.url;
+    image.alt = blog.media.alt;
+    image.className = "width-100 height-100 object-fit carouselImg"
 
-    carouselImgs.appendChild(image)
-  });
+    let textBox = document.createElement("div")
+    textBox.className = "carouselButtons gap10 flex flex-col items-center position-right textBoxCarousel"
+
+    let title = document.createElement("h2")
+    title.innerText = blog.title
+    title.className = "headerTwo"
+
+
+    let button = document.createElement("button")
+    button.innerText = "Read More"
+    button.className = "smallBlueButton"
+    button.addEventListener("click", () => {
+      window.location.href = "post/index.html?" + blog.id;
+    });
+    carouselImgs.appendChild(carouselBox)
+    carouselBox.append(image,textBox)
+    textBox.append(title,button)
+  })
 
   carousel();
 };
 
 const makeBlogPostGrid = async (container, blogs) => {
-
   blogs.sort((a, b) => new Date(b.created) - new Date(a.created));
   blogs.forEach((blog) => {
     let imageBox = document.createElement("div");
@@ -100,14 +128,14 @@ const makeBlogPostGrid = async (container, blogs) => {
     image.alt = "blog Image";
     image.className = "postGridImage cursor";
     image.addEventListener("click", () => {
-      window.location.href =  "post/index.html?" + blog.id;
+      window.location.href = "post/index.html?" + blog.id;
     });
 
     let title = document.createElement("h2");
     title.innerText = blog.title;
     title.className = "headerTwo imageTitle cursor font-medium";
     title.addEventListener("click", () => {
-      window.location.href =  "post/index.html?" + blog.id;
+      window.location.href = "post/index.html?" + blog.id;
     });
 
     container.appendChild(imageBox);
