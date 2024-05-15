@@ -13,7 +13,7 @@ export const doFetch = async (method, noroffapi, body) => {
       method: method,
       headers: {
         "content-Type": "application/json",
-        Authorization: "Bearer" + accessToken,
+        Authorization: "Bearer " + accessToken,
       },
       body: JSON.stringify(body),
     });

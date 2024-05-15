@@ -1,3 +1,5 @@
+//Code borrowed from: https://codepen.io/natalieannebirch/pen/MWbKyyg //
+
 export const carousel = () => {
    let prev = document.querySelector(".prevBtn")
    let next = document.querySelector(".nextBtn")
