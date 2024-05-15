@@ -2,6 +2,7 @@ import { makeHeader } from "../components/header.js";
 import { makeFooter } from "../components/footer.js";
 import { doFetch } from "../components/fetch.js";
 import { carousel } from "../components/carousel.js";
+import { makePagination } from "../components/pagination.mjs";
 
 const runPage = async () => {
   const blogs = await doFetch(
@@ -40,12 +41,16 @@ const makePage = (blogs) => {
   let blogPostGrid = document.createElement("div");
   blogPostGrid.className = "blogPostGridContainer";
 
+  let paginationNumbers = document.createElement("div")
+  paginationNumbers.id = "paginationContainer"
+
   main.appendChild(container);
   container.append(
     headlineContainerOne,
     carouselDiv,
     headlineContainerTwo,
-    blogPostGrid
+    blogPostGrid,
+    paginationNumbers
   );
   headlineContainerOne.appendChild(recentPostsHeadline);
   headlineContainerTwo.appendChild(allPostsHeadline);
@@ -118,29 +123,10 @@ const makeCarousel = async (carouselDiv, blogs) => {
 };
 
 const makeBlogPostGrid = async (container, blogs) => {
-  blogs.sort((a, b) => new Date(b.created) - new Date(a.created));
-  blogs.forEach((blog) => {
-    let imageBox = document.createElement("div");
-    imageBox.className = "postImageBox flex items-center justify-center";
+  // blogs.sort((a, b) => new Date(b.created) - new Date(a.created));
 
-    let image = document.createElement("img");
-    image.src = blog.media.url;
-    image.alt = "blog Image";
-    image.className = "postGridImage cursor";
-    image.addEventListener("click", () => {
-      window.location.href = "post/index.html?" + blog.id;
-    });
-
-    let title = document.createElement("h2");
-    title.innerText = blog.title;
-    title.className = "headerTwo imageTitle cursor font-medium";
-    title.addEventListener("click", () => {
-      window.location.href = "post/index.html?" + blog.id;
-    });
-
-    container.appendChild(imageBox);
-    imageBox.append(image, title);
-  });
+  makePagination(container, blogs)
+  
 };
 
 runPage();

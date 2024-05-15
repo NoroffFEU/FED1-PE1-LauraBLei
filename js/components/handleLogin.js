@@ -11,9 +11,6 @@ export const handleLogIn = () => {
             email: formData.get("email"),
             password: formData.get("password")
         }
-
-        console.log("formdata:", formData);
-        console.log("log in data:", logInData);
         let response = await doFetch("POST", "https://v2.api.noroff.dev/auth/login",logInData)
         if(!response){
             alert("Your Email or Password is wrong.")
