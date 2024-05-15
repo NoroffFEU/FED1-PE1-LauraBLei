@@ -46,10 +46,14 @@ const makeForms = (container, imageBox) => {
   imageInput.className = "titleInput";
 
   imageInput.addEventListener("input", (event) => {
+    const existingImagePreview = imageBox.querySelector('.postImage')
+    if (existingImagePreview){
+        existingImagePreview.remove()
+    }
     if (imageInput.value.trim() !== "") {
       let imagePreview = document.createElement("img");
       imagePreview.src = imageInput.value;
-      imagePreview.className = "imagePreview";
+      imagePreview.className = "postImage";
       imageBox.appendChild(imagePreview);
     } else {
       imagePreview.src = "#";
