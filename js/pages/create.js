@@ -58,6 +58,7 @@ const makeForms = (container, imageBox) => {
     } else {
       imagePreview.src = "#";
     }
+    window.location.href = "../index.html"
   });
 
   let titleFormBox = document.createElement("div");
