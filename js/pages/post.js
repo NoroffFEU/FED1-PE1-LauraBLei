@@ -11,7 +11,7 @@ const runPage = () => {
 const makePage = async () => {
   const id = window.location.search.slice(1)
   console.log(id);
-
+  const months = ["January", "February","March","April","June","July","August","September","October","November","December"]
   let blog = await doFetch("GET", "https://v2.api.noroff.dev/blog/posts/Tompe/"+id)
   console.log(blog);
 
@@ -63,7 +63,8 @@ const makePage = async () => {
   publicationDateText.innerText = "Publication date:";
 
   let publicationDate = document.createElement("p");
-  publicationDate.innerText = blog.updated;
+  let formattedDate= new Date(blog.created)
+  publicationDate.innerText = `${formattedDate.getDate()} ${months[formattedDate.getMonth()]} ${formattedDate.getFullYear()}`;
 
   let postText = document.createElement("p");
   postText.innerText = blog.body
