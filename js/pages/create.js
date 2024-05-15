@@ -58,7 +58,6 @@ const makeForms = (container, imageBox) => {
     } else {
       imagePreview.src = "#";
     }
-    window.location.href = "../index.html"
   });
 
   let titleFormBox = document.createElement("div");
@@ -114,7 +113,7 @@ const makeForms = (container, imageBox) => {
     };
     let userInfo = JSON.parse(localStorage.getItem("userInfo"))
       await doFetch("POST", "https://v2.api.noroff.dev/blog/posts/"+ userInfo.name, postData)
-    
+      window.location.href = "../index.html"
   });
 };
 
