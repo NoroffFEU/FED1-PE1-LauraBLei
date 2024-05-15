@@ -1,29 +1,50 @@
+import { showLoader } from "./loader.mjs";
+import { hideLoader } from "./loader.mjs";
+
 //  Post url: https://v2.api.noroff.dev/blog/posts/Tompe  //
 //  Register url: https://v2.api.noroff.dev/auth/register  //
 
 export const doFetch = async (method, noroffapi, body) => {
   console.log("Doing fetch call towards: ", noroffapi);
   let userInfo = JSON.parse(localStorage.getItem("userInfo"));
-  let accessToken = ""
-  if(userInfo){
-    accessToken = userInfo.accessToken
+  let accessToken = "";
+  if (userInfo) {
+    accessToken = userInfo.accessToken;
   }
-  try {
-    const response = await fetch(noroffapi, {
-      method: method,
-      headers: {
-        "content-Type": "application/json",
-        Authorization: "Bearer " + accessToken,
-      },
-      body: JSON.stringify(body),
-    });
+  if (method === "GET") {
+    showLoader();
+    try {
+      const response = await fetch(noroffapi, {
+        method: method,
+        headers: {
+          "content-Type": "application/json",
+          Authorization: "Bearer " + accessToken,
+        },
+        body: JSON.stringify(body),
+      });
+      const data = await response.json();
+      console.log(data);
+      hideLoader()
+      return data.data;
+    } catch (err) {
+      console.log(err);
+    }
+  } else {
+    try {
+      const response = await fetch(noroffapi, {
+        method: method,
+        headers: {
+          "content-Type": "application/json",
+          Authorization: "Bearer " + accessToken,
+        },
+        body: JSON.stringify(body),
+      });
 
-    const data = await response.json();
-    console.log(data);
-    return data.data;
-  } catch (err) {
-    console.log(err);
+      const data = await response.json();
+      console.log(data);
+      return data.data;
+    } catch (err) {
+      console.log(err);
+    }
   }
 };
-
-
