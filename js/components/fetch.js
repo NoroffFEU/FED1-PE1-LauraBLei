@@ -11,7 +11,6 @@ export const doFetch = async (method, noroffapi, body) => {
   if (userInfo) {
     accessToken = userInfo.accessToken;
   }
-  if (method === "GET") {
     showLoader();
     try {
       const response = await fetch(noroffapi, {
@@ -24,27 +23,11 @@ export const doFetch = async (method, noroffapi, body) => {
       });
       const data = await response.json();
       console.log(data);
+      return data.data;
+    } catch (err) {
+      console.log(err);
+    }finally{
       hideLoader()
-      return data.data;
-    } catch (err) {
-      console.log(err);
     }
-  } else {
-    try {
-      const response = await fetch(noroffapi, {
-        method: method,
-        headers: {
-          "content-Type": "application/json",
-          Authorization: "Bearer " + accessToken,
-        },
-        body: JSON.stringify(body),
-      });
-
-      const data = await response.json();
-      console.log(data);
-      return data.data;
-    } catch (err) {
-      console.log(err);
-    }
-  }
+  
 };

@@ -69,6 +69,20 @@ const makeForms = (container, imageBox, blog, id) => {
   
   imageInput.addEventListener("input", imageInputEvent);
 
+  let tagFormBox = document.createElement("div");
+  tagFormBox.className = "inputBox";
+
+  let tagLabel = document.createElement("label");
+  tagLabel.innerText = "Tags:";
+  tagLabel.className = "headerTwo";
+
+  let tagInput = document.createElement("input");
+  tagInput.type = "text";
+  tagInput.id = "tag";
+  tagInput.name = "tag"
+  tagInput.className = "titleInput";
+  tagInput.placeholder = "Insert a tag here.."
+
   let titleFormBox = document.createElement("div");
   titleFormBox.className = "inputBox";
 
@@ -112,9 +126,10 @@ const makeForms = (container, imageBox, blog, id) => {
   }
 
   container.append(form, deleteButton);
-  form.append(imageFormBox, titleFormBox, textFormBox, submitButton);
+  form.append(imageFormBox, tagFormBox, titleFormBox, textFormBox, submitButton);
   imageFormBox.append(imageLabel, imageInput);
   titleFormBox.append(titleLabel, titleInput);
+  tagFormBox.append(tagLabel, tagInput)
   textFormBox.append(textInput);
 
   
@@ -129,7 +144,8 @@ const makeForms = (container, imageBox, blog, id) => {
       media:{
         url: formData.get("image"),
         alt:"image"
-      }
+      },
+      tags: formData.get("tag").split(" ")
       // Add other form fields as needed
     };
     let userInfo = JSON.parse(localStorage.getItem("userInfo"))

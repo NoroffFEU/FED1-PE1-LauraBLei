@@ -46,6 +46,14 @@ const makePage = async () => {
   let textContainer = document.createElement("div");
   textContainer.className = "flex flex-col gap10 textBox"
 
+  let tagContainer = document.createElement("div")
+  tagContainer.className = "flex gap10"
+
+  let tagText = document.createElement("p")
+  tagText.innerText = "Tags:"
+
+  let tags = document.createElement("p")
+  tags.innerText = blog.tags
 
   let authorContainer = document.createElement("div");
   authorContainer.className = "flex gap10"
@@ -73,7 +81,8 @@ const makePage = async () => {
   main.appendChild(container);
   container.append(imageBox, editButton, postTitle, textContainer);
   imageBox.appendChild(postImage);
-  textContainer.append(authorContainer, publicationContainer, postText);
+  textContainer.append(tagContainer, authorContainer, publicationContainer, postText);
+  tagContainer.append(tagText, tags)
   authorContainer.append(authorText, author);
   publicationContainer.append(publicationDateText, publicationDate);
 };

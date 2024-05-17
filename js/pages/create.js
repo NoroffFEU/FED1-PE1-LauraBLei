@@ -44,6 +44,7 @@ const makeForms = (container, imageBox) => {
   imageInput.id = "image";
   imageInput.name = "image"
   imageInput.className = "titleInput";
+  imageInput.placeholder = "Insert image url here.."
 
   imageInput.addEventListener("input", (event) => {
     const existingImagePreview = imageBox.querySelector('.postImage')
@@ -60,6 +61,20 @@ const makeForms = (container, imageBox) => {
     }
   });
 
+  let tagFormBox = document.createElement("div");
+  tagFormBox.className = "inputBox";
+
+  let tagLabel = document.createElement("label");
+  tagLabel.innerText = "Tags:";
+  tagLabel.className = "headerTwo";
+
+  let tagInput = document.createElement("input");
+  tagInput.type = "text";
+  tagInput.id = "tag";
+  tagInput.name = "tag"
+  tagInput.className = "titleInput";
+  tagInput.placeholder = "Insert a tag here.."
+  
   let titleFormBox = document.createElement("div");
   titleFormBox.className = "inputBox";
 
@@ -93,9 +108,10 @@ const makeForms = (container, imageBox) => {
   deleteButton.className = "smallBlueButton";
 
   container.append(form, deleteButton);
-  form.append(imageFormBox, titleFormBox, textFormBox, submitButton);
+  form.append(imageFormBox, tagFormBox, titleFormBox, textFormBox, submitButton);
   imageFormBox.append(imageLabel, imageInput);
   titleFormBox.append(titleLabel, titleInput);
+  tagFormBox.append(tagLabel, tagInput)
   textFormBox.append(textInput);
 
   form.addEventListener("submit", async (event) => {
@@ -108,7 +124,10 @@ const makeForms = (container, imageBox) => {
       media:{
         url: formData.get("image"),
         alt:"image"
-      }
+      },
+      tags: [
+        formData.get("tag")
+      ]
       // Add other form fields as needed
     };
     let userInfo = JSON.parse(localStorage.getItem("userInfo"))

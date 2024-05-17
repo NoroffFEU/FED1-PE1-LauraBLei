@@ -5,6 +5,29 @@
   flex-shrink: 0;
 }
 
+/*------------Mechanisms-------------*/
+.mechContainer{
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btnContainer {
+  max-width: 389px;
+  flex-wrap: wrap;
+}
+
+.mechButton{
+  position: absolute;
+  z-index: 2;
+  background-color: var(--blue);
+  padding: 15px 44px;
+  margin-top: 15px;
+}
+
+.blob{
+  display: flex;
+}
+
 /*------------Grid-------------*/
 
 .blogPostGridContainer {
@@ -102,5 +125,9 @@
 @media screen and (max-width: 460px) {
   .carouselImageContainer {
     max-height: 200px;
+  }
+  .mechButton{
+    padding: 15px 25px;
+    margin-top: 10px;
   }
 }

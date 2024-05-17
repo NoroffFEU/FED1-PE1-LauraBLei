@@ -116,6 +116,10 @@ p {
   justify-content: space-evenly;
 }
 
+.list-style-none{
+  list-style: none;
+}
+
 .cursor {
   cursor: pointer;
 }
