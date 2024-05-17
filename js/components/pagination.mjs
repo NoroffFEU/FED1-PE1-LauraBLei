@@ -11,6 +11,7 @@ export const makePagination = (blogs) => {
 
 const makePaginationNumbers = (pages, blogs, currentPage,container) => {
   let paginationContainer = document.getElementById("paginationContainer")
+  paginationContainer.innerHTML = ""
   for (let index = 1; index <= pages; index++) {
       const pageNumber = document.createElement("a")
       pageNumber.innerText = index
