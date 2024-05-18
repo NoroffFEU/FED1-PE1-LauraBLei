@@ -5,6 +5,7 @@ import { carousel } from "../components/carousel.js";
 import { makePagination } from "../components/pagination.mjs";
 import { sortBy } from "../components/sortBy.mjs";
 import { filterBy } from "../components/filterBy.mjs";
+import { searchMech } from "../components/search.mjs";
 
 const runPage = async () => {
   const blogs = await doFetch(
@@ -14,8 +15,9 @@ const runPage = async () => {
   makePage(blogs);
   makeHeader();
   makeFooter();
-  sortBy(blogs)
-  filterBy(blogs)
+  sortBy(blogs);
+  filterBy(blogs);
+  searchMech(blogs)
 };
 
 const makePage = (blogs) => {
@@ -43,11 +45,12 @@ const makePage = (blogs) => {
   allPostsHeadline.className = "headerOne";
 
   const mechContainer = document.createElement("div");
-  mechContainer.className = "mechContainer flex between width-100";
+  mechContainer.className = "mechContainer flex between width-100 gap10";
+  mechContainer.id = "mechContainer";
 
   const blogPostGrid = document.createElement("div");
   blogPostGrid.className = "blogPostGridContainer";
-  blogPostGrid.id = "blogPostGrid"
+  blogPostGrid.id = "blogPostGrid";
 
   const paginationNumbers = document.createElement("div");
   paginationNumbers.id = "paginationContainer";
@@ -131,9 +134,9 @@ const makeCarousel = async (carouselDiv, blogs) => {
   carousel();
 };
 
-const makeBlogPostGrid = async ( blogs, mechContainer) => {
+const makeBlogPostGrid = async (blogs, mechContainer) => {
   const buttonContainer = document.createElement("div");
-  buttonContainer.className = "flex between width-100 btnContainer "
+  buttonContainer.className = "flex between width-100 btnContainer ";
 
   const sortButtonDetails = document.createElement("details");
 
@@ -142,18 +145,17 @@ const makeBlogPostGrid = async ( blogs, mechContainer) => {
   sortButtonSummary.className = "smallBlueButton list-style-none";
 
   const sortButtonUl = document.createElement("ul");
-  sortButtonUl.className = "list-style-none mechButton"
+  sortButtonUl.className = "list-style-none mechButton";
 
-  const sortByNewest = document.createElement("li")
-  sortByNewest.innerText = "Newest"
-  sortByNewest.className = "headerTwo cursor"
-  sortByNewest.id = "newest"
+  const sortByNewest = document.createElement("li");
+  sortByNewest.innerText = "Newest";
+  sortByNewest.className = "headerTwo cursor";
+  sortByNewest.id = "newest";
 
-  const sortByOldest = document.createElement("li")
-  sortByOldest.innerText = "Oldest"
-  sortByOldest.className = "headerTwo cursor"
-  sortByOldest.id = "oldest"
-
+  const sortByOldest = document.createElement("li");
+  sortByOldest.innerText = "Oldest";
+  sortByOldest.className = "headerTwo cursor";
+  sortByOldest.id = "oldest";
 
   const filterButtonDetails = document.createElement("details");
 
@@ -162,41 +164,58 @@ const makeBlogPostGrid = async ( blogs, mechContainer) => {
   filterButtonSummary.className = "smallBlueButton list-style-none";
 
   const filterButtonUl = document.createElement("ul");
-  filterButtonUl.className = "list-style-none mechButton"
+  filterButtonUl.className = "list-style-none mechButton";
 
-  const showAll = document.createElement("li")
-  showAll.innerText = "Show All"
-  showAll.className = "headerTwo cursor filter"
+  const showAll = document.createElement("li");
+  showAll.innerText = "Show All";
+  showAll.className = "headerTwo cursor filter";
 
+  const filterByOutdoor = document.createElement("li");
+  filterByOutdoor.innerText = "Outdoor";
+  filterByOutdoor.className = "headerTwo cursor filter";
 
-  const filterByOutdoor = document.createElement("li")
-  filterByOutdoor.innerText = "Outdoor"
-  filterByOutdoor.className = "headerTwo cursor filter"
+  const filterByFamily = document.createElement("li");
+  filterByFamily.innerText = "Family";
+  filterByFamily.className = "headerTwo cursor filter";
 
-  const filterByFamily = document.createElement("li")
-  filterByFamily.innerText = "Family"
-  filterByFamily.className = "headerTwo cursor filter"
+  const filterByFriends = document.createElement("li");
+  filterByFriends.innerText = "Friends";
+  filterByFriends.className = "headerTwo cursor filter";
 
-  const filterByFriends = document.createElement("li")
-  filterByFriends.innerText = "Friends"
-  filterByFriends.className = "headerTwo cursor filter"
+  const filterByTompe = document.createElement("li");
+  filterByTompe.innerText = "Tompe";
+  filterByTompe.className = "headerTwo cursor filter";
 
-  const filterByTompe = document.createElement("li")
-  filterByTompe.innerText = "Tompe"
-  filterByTompe.className = "headerTwo cursor filter"
+  const filterByIndoor = document.createElement("li");
+  filterByIndoor.innerText = "Indoor";
+  filterByIndoor.className = "headerTwo cursor filter";
 
-  const filterByIndoor = document.createElement("li")
-  filterByIndoor.innerText = "Indoor"
-  filterByIndoor.className = "headerTwo cursor filter"
+  const searchContainer = document.createElement("div");
+  searchContainer.className = "searchContainer width-100 "
+  
+  
+  const input = document.createElement("input");
+  input.type = "search";
+  input.id = "search";
+  input.setAttribute("data-search", "")
+  input.className = "width-100 searchInput shadow"
+  input.placeholder = "Search..."
 
-  mechContainer.appendChild(buttonContainer);
+  mechContainer.append(buttonContainer, searchContainer);
   buttonContainer.append(sortButtonDetails, filterButtonDetails);
   sortButtonDetails.append(sortButtonSummary, sortButtonUl);
-  sortButtonUl.append(sortByNewest, sortByOldest)
-  filterButtonDetails.append(filterButtonSummary, filterButtonUl)
-  filterButtonUl.append(showAll, filterByFamily, filterByOutdoor, filterByFriends, filterByTompe, filterByIndoor)
+  sortButtonUl.append(sortByNewest, sortByOldest);
+  filterButtonDetails.append(filterButtonSummary, filterButtonUl);
+  searchContainer.appendChild(input)
+  filterButtonUl.append(
+    showAll,
+    filterByFamily,
+    filterByOutdoor,
+    filterByFriends,
+    filterByTompe,
+    filterByIndoor
+  );
 
-  console.log(mechContainer);
   makePagination(blogs);
 };
 

@@ -6,7 +6,7 @@
 }
 
 /*------------Mechanisms-------------*/
-.mechContainer{
+.mechContainer {
   margin-top: 20px;
   flex-wrap: wrap;
 }
@@ -16,7 +16,7 @@
   flex-wrap: wrap;
 }
 
-.mechButton{
+.mechButton {
   position: absolute;
   z-index: 2;
   background-color: var(--blue);
@@ -24,8 +24,9 @@
   margin-top: 15px;
 }
 
-.blob{
-  display: flex;
+.searchContainer {
+  max-width: 389px;
+  flex-wrap: nowrap;
 }
 
 /*------------Grid-------------*/
@@ -57,7 +58,7 @@
 
 /*---------------Carousel--------------*/
 
-.slide-indicators{
+.slide-indicators {
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -117,7 +118,7 @@
     width: 40px;
   }
 
-  .textBoxCarousel{
+  .textBoxCarousel {
     margin-bottom: 50px;
   }
 }
@@ -126,7 +127,7 @@
   .carouselImageContainer {
     max-height: 200px;
   }
-  .mechButton{
+  .mechButton {
     padding: 15px 25px;
     margin-top: 10px;
   }

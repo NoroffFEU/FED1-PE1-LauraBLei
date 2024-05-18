@@ -1,3 +1,4 @@
+import { searchMech } from "./search.mjs";
 
 const MAX_BLOGS_PER_PAGE = 12
 
@@ -6,7 +7,8 @@ export const makePagination = (blogs) => {
   const pages = Math.ceil(blogs.length/MAX_BLOGS_PER_PAGE) ;
   let currentPage = 1;
   makePaginationNumbers(pages, blogs, currentPage,container)
-  calculatePage(blogs, currentPage, container)
+  calculatePage(blogs, currentPage)
+  // searchMech(blogs)
 };
 
 const makePaginationNumbers = (pages, blogs, currentPage,container) => {
@@ -25,16 +27,18 @@ const makePaginationNumbers = (pages, blogs, currentPage,container) => {
   }
 }
 
-const calculatePage = (blogs, currentPage, container) => {
+export const calculatePage = (blogs, currentPage) => {
   const startBlogs = (currentPage-1) * MAX_BLOGS_PER_PAGE
   const lastBlogs = currentPage * MAX_BLOGS_PER_PAGE
   const blogsToShow = blogs.slice(startBlogs, lastBlogs)
-    displayPage(container, blogsToShow)
+    displayPage(blogsToShow)
 
 }
 
 
-const displayPage = async(container, blogs) => {
+export const displayPage = async(blogs) => {
+  console.log("hello from display page");
+  const container = document.getElementById("blogPostGrid")
   container.innerHTML = ""
   blogs.forEach((blog) => {
     let imageBox = document.createElement("div");
