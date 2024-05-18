@@ -17,7 +17,7 @@ const makePage = () => {
   container.className = "container";
 
   let imageBox = document.createElement("div");
-  imageBox.className = "imagePreview";
+  imageBox.className = "width-100 max-height550 overflow-hidden";
 
   let headline = document.createElement("h1");
   headline.innerHTML = "Create Post";

@@ -41,19 +41,19 @@ export const displayPage = async(blogs) => {
   container.innerHTML = ""
   blogs.forEach((blog) => {
     let imageBox = document.createElement("div");
-    imageBox.className = "postImageBox flex items-center justify-center";
+    imageBox.className = "postImageBox width-100 overflow-hidden flex items-center justify-center";
 
     let image = document.createElement("img");
     image.src = blog.media.url;
     image.alt = "blog Image";
-    image.className = "postGridImage cursor";
+    image.className = "postGridImage width-100 height-100 cursor";
     image.addEventListener("click", () => {
       window.location.href = "post/index.html?" + blog.id;
     });
 
     let title = document.createElement("h2");
     title.innerText = blog.title;
-    title.className = "headerTwo imageTitle cursor font-medium";
+    title.className = "headerTwo position-absolute cursor font-medium";
     title.addEventListener("click", () => {
       window.location.href = "post/index.html?" + blog.id;
     });

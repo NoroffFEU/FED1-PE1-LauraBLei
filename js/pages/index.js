@@ -27,7 +27,7 @@ const makePage = (blogs) => {
   container.className = "container";
 
   const headlineContainerOne = document.createElement("div");
-  headlineContainerOne.className = "headlineContainer flex justify-center";
+  headlineContainerOne.className = "headlineContainer width-100";
 
   const recentPostsHeadline = document.createElement("h1");
   recentPostsHeadline.innerText = "Recent Posts";
@@ -38,7 +38,7 @@ const makePage = (blogs) => {
     "flex flex-col justify-center items-center marginBotTop width-100";
 
   const headlineContainerTwo = document.createElement("div");
-  headlineContainerTwo.className = "headlineContainer flex justify-center";
+  headlineContainerTwo.className = "headlineContainer width-100";
 
   const allPostsHeadline = document.createElement("h1");
   allPostsHeadline.innerText = "Blog Posts";
@@ -46,10 +46,10 @@ const makePage = (blogs) => {
 
   const mechContainer = document.createElement("div");
   mechContainer.className = "mechContainer flex between width-100 gap10";
-  mechContainer.id = "mechContainer";
+  mechContainer.id = "mechContainer flex-wrap";
 
   const blogPostGrid = document.createElement("div");
-  blogPostGrid.className = "blogPostGridContainer";
+  blogPostGrid.className = "blogPostGridContainer grid width-100";
   blogPostGrid.id = "blogPostGrid";
 
   const paginationNumbers = document.createElement("div");
@@ -77,12 +77,12 @@ const makeCarousel = async (carouselDiv, blogs) => {
   let leftButton = document.createElement("img");
   leftButton.src = "./public/Left.png";
   leftButton.id = "prevBtn";
-  leftButton.className = "carouselButtons position-left cursor prevBtn";
+  leftButton.className = "carouselButtons position-absolute z-index2 position-left cursor prevBtn";
 
   let rightButton = document.createElement("img");
   rightButton.src = "./public/Right.png";
   rightButton.id = "nextBtn";
-  rightButton.className = "carouselButtons position-right cursor nextBtn";
+  rightButton.className = "carouselButtons position-absolute z-index2 position-right cursor nextBtn";
 
   let dots = document.createElement("div");
   dots.id = "slide-indicators";
@@ -106,7 +106,7 @@ const makeCarousel = async (carouselDiv, blogs) => {
   latestPosts.forEach((blog) => {
     let carouselBox = document.createElement("div");
     carouselBox.className =
-      "carouselBox visible justify-center items-center carouselImageContainer shadow width-100";
+      "carouselBox visible justify-center items-center carouselImageContainer overflow-hidden shadow width-100";
     let image = document.createElement("img");
     image.src = blog.media.url;
     image.alt = blog.media.alt;
@@ -114,7 +114,7 @@ const makeCarousel = async (carouselDiv, blogs) => {
 
     let textBox = document.createElement("div");
     textBox.className =
-      "carouselButtons gap10 flex flex-col items-center position-right textBoxCarousel";
+      "carouselButtons position-absolute gap10 flex flex-col items-center position-right textBoxCarousel";
 
     let title = document.createElement("h2");
     title.innerText = blog.title;
@@ -136,7 +136,7 @@ const makeCarousel = async (carouselDiv, blogs) => {
 
 const makeBlogPostGrid = async (blogs, mechContainer) => {
   const buttonContainer = document.createElement("div");
-  buttonContainer.className = "flex between width-100 btnContainer ";
+  buttonContainer.className = "flex between width-100 btnContainer flex-wrap ";
 
   const sortButtonDetails = document.createElement("details");
 
@@ -145,7 +145,7 @@ const makeBlogPostGrid = async (blogs, mechContainer) => {
   sortButtonSummary.className = "smallBlueButton list-style-none";
 
   const sortButtonUl = document.createElement("ul");
-  sortButtonUl.className = "list-style-none mechButton";
+  sortButtonUl.className = "list-style-none mechButton position-absolute";
 
   const sortByNewest = document.createElement("li");
   sortByNewest.innerText = "Newest";
@@ -164,7 +164,7 @@ const makeBlogPostGrid = async (blogs, mechContainer) => {
   filterButtonSummary.className = "smallBlueButton list-style-none";
 
   const filterButtonUl = document.createElement("ul");
-  filterButtonUl.className = "list-style-none mechButton";
+  filterButtonUl.className = "list-style-none mechButton position-absolute";
 
   const showAll = document.createElement("li");
   showAll.innerText = "Show All";
@@ -191,7 +191,7 @@ const makeBlogPostGrid = async (blogs, mechContainer) => {
   filterByIndoor.className = "headerTwo cursor filter";
 
   const searchContainer = document.createElement("div");
-  searchContainer.className = "searchContainer width-100 "
+  searchContainer.className = "searchContainer width-100 flex-noWrap"
   
   
   const input = document.createElement("input");

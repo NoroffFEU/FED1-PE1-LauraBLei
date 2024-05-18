@@ -14,5 +14,6 @@ export const handleRegistration = () => {
         }
 
         await doFetch("POST", "https://v2.api.noroff.dev/auth/register", registerData)
+        window.location.href = "./login.html"
     })
 }
