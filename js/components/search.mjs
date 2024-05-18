@@ -7,8 +7,6 @@ export const searchMech = (blogs) => {
 
   searchInput.addEventListener("input", (e) => {
     const value = e.target.value.toLowerCase();
-    console.log(blogs);
-    console.log(typeof(blogs));
     const newBlogs = blogs.filter((blog) => {
       if (value === "") {
         return true
@@ -16,7 +14,6 @@ export const searchMech = (blogs) => {
         return blog.title.toLowerCase().includes(value);
       }
     });
-    console.log(newBlogs);
     makePagination(newBlogs);
   });
 };

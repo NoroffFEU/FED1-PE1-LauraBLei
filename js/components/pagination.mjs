@@ -37,7 +37,6 @@ export const calculatePage = (blogs, currentPage) => {
 
 
 export const displayPage = async(blogs) => {
-  console.log("hello from display page");
   const container = document.getElementById("blogPostGrid")
   container.innerHTML = ""
   blogs.forEach((blog) => {

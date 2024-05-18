@@ -5,7 +5,6 @@ import { hideLoader } from "./loader.mjs";
 //  Register url: https://v2.api.noroff.dev/auth/register  //
 
 export const doFetch = async (method, noroffapi, body) => {
-  console.log("Doing fetch call towards: ", noroffapi);
   let userInfo = JSON.parse(localStorage.getItem("userInfo"));
   let accessToken = "";
   if (userInfo) {
@@ -22,10 +21,9 @@ export const doFetch = async (method, noroffapi, body) => {
         body: JSON.stringify(body),
       });
       const data = await response.json();
-      console.log(data);
       return data.data;
     } catch (err) {
-      console.log(err);
+      alert("something went wrong")
     }finally{
       hideLoader()
     }

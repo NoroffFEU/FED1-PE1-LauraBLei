@@ -10,10 +10,8 @@ const runPage = () => {
 
 const makePage = async () => {
   const id = window.location.search.slice(1)
-  console.log(id);
   const months = ["January", "February","March","April","June","July","August","September","October","November","December"]
   let blog = await doFetch("GET", "https://v2.api.noroff.dev/blog/posts/Tompe/"+id)
-  console.log(blog);
 
   let main = document.querySelector("main");
 

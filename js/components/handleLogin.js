@@ -16,7 +16,6 @@ export const handleLogIn = () => {
             alert("Your Email or Password is wrong.")
             return
         }
-        console.log(response);
 
         localStorage.setItem("userInfo",JSON.stringify(response))
         window.location.href = "../index.html"

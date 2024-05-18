@@ -14,14 +14,12 @@ const createEventListener = (blogs) => {
 
 const filterByTag = (tag, blogs) => {
   if (tag === "Show All") {
-    console.log("blogs:", blogs);
     makePagination(blogs);
   } else {
     let sortedList = blogs.filter((blog) => {
       const checkthis = blog.tags.find((element ) => element === tag);
       return checkthis;
     });
-    console.log("filter blogs:", sortedList);
 
     makePagination(sortedList);
   }

@@ -5,7 +5,6 @@ import { doFetch } from "../components/fetch.js";
 const runPage = async() => {
     const id = window.location.search.slice(1)
     let blog = await doFetch("GET", "https://v2.api.noroff.dev/blog/posts/Tompe/"+id)
-    console.log("blog",blog);
   makePage(blog, id)
   makeHeader()
   makeFooter()
