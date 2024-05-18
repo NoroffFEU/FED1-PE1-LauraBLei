@@ -17,7 +17,7 @@ const runPage = async () => {
   makeFooter();
   sortBy(blogs);
   filterBy(blogs);
-  searchMech(blogs)
+  searchMech(blogs);
 };
 
 const makePage = (blogs) => {
@@ -45,7 +45,8 @@ const makePage = (blogs) => {
   allPostsHeadline.className = "headerOne";
 
   const mechContainer = document.createElement("div");
-  mechContainer.className = "mechContainer flex-wrap flex between width-100 gap10";
+  mechContainer.className =
+    "mechContainer flex-wrap flex between width-100 gap10";
   mechContainer.id = "mechContainer flex-wrap";
 
   const blogPostGrid = document.createElement("div");
@@ -77,12 +78,14 @@ const makeCarousel = async (carouselDiv, blogs) => {
   let leftButton = document.createElement("img");
   leftButton.src = "./public/Left.png";
   leftButton.id = "prevBtn";
-  leftButton.className = "carouselButtons position-absolute z-index2 position-left cursor prevBtn";
+  leftButton.className =
+    "carouselButtons position-absolute z-index2 position-left cursor prevBtn";
 
   let rightButton = document.createElement("img");
   rightButton.src = "./public/Right.png";
   rightButton.id = "nextBtn";
-  rightButton.className = "carouselButtons position-absolute z-index2 position-right cursor nextBtn";
+  rightButton.className =
+    "carouselButtons position-absolute z-index2 position-right cursor nextBtn";
 
   let dots = document.createElement("div");
   dots.id = "slide-indicators";
@@ -191,22 +194,21 @@ const makeBlogPostGrid = async (blogs, mechContainer) => {
   filterByIndoor.className = "headerTwo cursor filter";
 
   const searchContainer = document.createElement("div");
-  searchContainer.className = "searchContainer width-100 flex-noWrap"
-  
-  
+  searchContainer.className = "searchContainer width-100 flex-noWrap";
+
   const input = document.createElement("input");
   input.type = "search";
   input.id = "search";
-  input.setAttribute("data-search", "")
-  input.className = "width-100 searchInput shadow"
-  input.placeholder = "Search..."
+  input.setAttribute("data-search", "");
+  input.className = "width-100 searchInput shadow";
+  input.placeholder = "Search...";
 
   mechContainer.append(buttonContainer, searchContainer);
   buttonContainer.append(sortButtonDetails, filterButtonDetails);
   sortButtonDetails.append(sortButtonSummary, sortButtonUl);
   sortButtonUl.append(sortByNewest, sortByOldest);
   filterButtonDetails.append(filterButtonSummary, filterButtonUl);
-  searchContainer.appendChild(input)
+  searchContainer.appendChild(input);
   filterButtonUl.append(
     showAll,
     filterByFamily,

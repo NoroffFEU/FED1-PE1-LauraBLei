@@ -1,7 +1,10 @@
 export const makeHeader = () => {
-  let isFrontPage = true
-  if (window.location.pathname.includes("post") || window.location.pathname.includes("account")) {
-    isFrontPage = false
+  let isFrontPage = true;
+  if (
+    window.location.pathname.includes("post") ||
+    window.location.pathname.includes("account")
+  ) {
+    isFrontPage = false;
   }
   let userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
@@ -10,7 +13,6 @@ export const makeHeader = () => {
 };
 
 const desktopHeader = (isFrontPage, userInfo) => {
-  
   let header = document.querySelector("header");
 
   let container = document.createElement("div");
@@ -21,18 +23,16 @@ const desktopHeader = (isFrontPage, userInfo) => {
     logo.src = "./public/Logo.png";
   } else {
     logo.src = "../public/Logo.png";
-
   }
   logo.className = "cursor logo";
 
-  logo.addEventListener('click', () => {
+  logo.addEventListener("click", () => {
     if (isFrontPage) {
-      window.location.href = "index.html"
-
+      window.location.href = "index.html";
     } else {
-      window.location.href = "../index.html"
+      window.location.href = "../index.html";
     }
-  })
+  });
 
   let nav = document.createElement("nav");
   nav.className = "justify-evenly header-gap flex";
@@ -40,17 +40,16 @@ const desktopHeader = (isFrontPage, userInfo) => {
   let createPost = document.createElement("a");
   createPost.innerText = "+ Create Post";
   if (isFrontPage) {
-    createPost.href = "post/create.html"
+    createPost.href = "post/create.html";
   } else {
-    createPost.href = "../post/create.html"
+    createPost.href = "../post/create.html";
   }
-
 
   createPost.className = "headerText margin cursor";
   if (userInfo) {
-    createPost.style.display = "block"
+    createPost.style.display = "block";
   } else {
-    createPost.style.display = "none"
+    createPost.style.display = "none";
   }
 
   let home = document.createElement("a");
@@ -62,25 +61,24 @@ const desktopHeader = (isFrontPage, userInfo) => {
     home.href = "../index.html";
   }
 
-
   let logOut = document.createElement("button");
   logOut.innerText = "Log Out";
-  logOut.className = "headerText margin cursor smallBlueButton"
-  logOut.classList.add = "hidden"
+  logOut.className = "headerText margin cursor smallBlueButton";
+  logOut.classList.add = "hidden";
   logOut.onclick = () => {
-    localStorage.removeItem("userInfo")
-    location.reload()
-  }
+    localStorage.removeItem("userInfo");
+    location.reload();
+  };
 
   let logIn = document.createElement("a");
-  logIn.innerText = "Login"
-  logIn.classList.add = "visible"
+  logIn.innerText = "Login";
+  logIn.classList.add = "visible";
   if (userInfo) {
-    logIn.style.display = "none"
-    logOut.style.display = "block"
+    logIn.style.display = "none";
+    logOut.style.display = "block";
   } else {
-    logIn.style.display = "block"
-    logOut.style.display = "none"
+    logIn.style.display = "block";
+    logOut.style.display = "none";
   }
 
   logIn.className = "headerText margin cursor";
@@ -108,14 +106,13 @@ const tabletHeader = (isFrontPage, userInfo) => {
     logo.src = "../public/Logo.png";
   }
   logo.className = "cursor logo";
-  logo.addEventListener('click', () => {
+  logo.addEventListener("click", () => {
     if (isFrontPage) {
-      window.location.href = "index.html"
-
+      window.location.href = "index.html";
     } else {
-      window.location.href = "../index.html"
+      window.location.href = "../index.html";
     }
-  })
+  });
 
   let details = document.createElement("details");
 
@@ -123,9 +120,9 @@ const tabletHeader = (isFrontPage, userInfo) => {
   menuButton.className = "menuButton headerText";
 
   let menuImg = document.createElement("img");
-  if(isFrontPage){
+  if (isFrontPage) {
     menuImg.src = "./public/Menu.png";
-  }else{
+  } else {
     menuImg.src = "../public/Menu.png";
   }
 
@@ -136,14 +133,14 @@ const tabletHeader = (isFrontPage, userInfo) => {
   createPost.innerText = "+ Create Post";
   createPost.className = "headerTwo marginBotTop styles-none";
   if (userInfo) {
-    createPost.style.display = "block"
+    createPost.style.display = "block";
   } else {
-    createPost.style.display = "none"
+    createPost.style.display = "none";
   }
   if (isFrontPage) {
-    createPost.href = "post/create.html"
+    createPost.href = "post/create.html";
   } else {
-    createPost.href = "../post/create.html"
+    createPost.href = "../post/create.html";
   }
 
   let home = document.createElement("a");
@@ -155,15 +152,14 @@ const tabletHeader = (isFrontPage, userInfo) => {
     home.href = "../index.html";
   }
 
-
   let logOut = document.createElement("button");
   logOut.innerText = "Log Out";
-  logOut.className = "headerText margin cursor"
-  logOut.className = "hidden smallBlueButton" 
+  logOut.className = "headerText margin cursor";
+  logOut.className = "hidden smallBlueButton";
   logOut.onclick = () => {
-    localStorage.removeItem("userInfo")
-    location.reload()
-  }
+    localStorage.removeItem("userInfo");
+    location.reload();
+  };
 
   let logIn = document.createElement("a");
   logIn.innerText = "Log In";
@@ -175,11 +171,11 @@ const tabletHeader = (isFrontPage, userInfo) => {
   }
 
   if (userInfo) {
-    logIn.style.display = "none"
-    logOut.style.display = "block"
+    logIn.style.display = "none";
+    logOut.style.display = "block";
   } else {
-    logIn.style.display = "block"
-    logOut.style.display = "none"
+    logIn.style.display = "block";
+    logOut.style.display = "none";
   }
 
   let aboutUs = document.createElement("a");
