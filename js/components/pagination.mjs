@@ -46,7 +46,7 @@ export const displayPage = async(blogs) => {
     let image = document.createElement("img");
     image.src = blog.media.url;
     image.alt = "blog Image";
-    image.className = "postGridImage width-100 height-100 cursor";
+    image.className = "postGridImage object-fit width-100 height-100 cursor";
     image.addEventListener("click", () => {
       window.location.href = "post/index.html?" + blog.id;
     });

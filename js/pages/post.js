@@ -19,10 +19,10 @@ const makePage = async () => {
   container.className = "container";
 
   let imageBox = document.createElement("div");
-  imageBox.className = "postImageContainer"
+  imageBox.className = "postImageContainer width-100 overflow-hidden shadow"
 
   let postImage = document.createElement("img");
-  postImage.className = "postImage"
+  postImage.className = "object-fit width-100 height-100"
   postImage.src = blog.media.url
 
   let editButton = document.createElement("button");
@@ -42,7 +42,7 @@ const makePage = async () => {
   postTitle.className = "headerOne";
 
   let textContainer = document.createElement("div");
-  textContainer.className = "flex flex-col gap10 textBox"
+  textContainer.className = "flex flex-col gap10 shadow textBox"
 
   let tagContainer = document.createElement("div")
   tagContainer.className = "flex gap10"

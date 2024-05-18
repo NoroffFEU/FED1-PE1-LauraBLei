@@ -54,7 +54,7 @@ const makeForms = (container, imageBox) => {
     if (imageInput.value.trim() !== "") {
       let imagePreview = document.createElement("img");
       imagePreview.src = imageInput.value;
-      imagePreview.className = "postImage";
+      imagePreview.className = "postImage object-fit width-100 height-100";
       imageBox.appendChild(imagePreview);
     } else {
       imagePreview.src = "#";

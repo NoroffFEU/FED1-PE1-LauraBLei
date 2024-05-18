@@ -19,7 +19,7 @@ const makePage = (blog, id) => {
   container.className = "container";
 
   let imageBox = document.createElement("div");
-  imageBox.className = "postImageContainer";
+  imageBox.className = "postImageContainer width-100 overflow-hidden shadow";
 
   let headline = document.createElement("h1");
   headline.innerHTML = "Edit Post";
@@ -57,7 +57,7 @@ const makeForms = (container, imageBox, blog, id) => {
       if (imageInput.value.trim() !== "") {
         let imagePreview = document.createElement("img");
         imagePreview.src = imageInput.value;
-        imagePreview.className = "postImage";
+        imagePreview.className = "postImage object-fit width-100 height-100";
         imagePreview.id = "imagePreview"
         imageBox.appendChild(imagePreview);
       } else {

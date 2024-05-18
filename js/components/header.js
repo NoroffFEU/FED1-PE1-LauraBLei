@@ -65,7 +65,7 @@ const desktopHeader = (isFrontPage, userInfo) => {
 
   let logOut = document.createElement("button");
   logOut.innerText = "Log Out";
-  logOut.className = "headerText margin cursor"
+  logOut.className = "headerText margin cursor smallBlueButton"
   logOut.classList.add = "hidden"
   logOut.onclick = () => {
     localStorage.removeItem("userInfo")

@@ -45,7 +45,7 @@ const makePage = (blogs) => {
   allPostsHeadline.className = "headerOne";
 
   const mechContainer = document.createElement("div");
-  mechContainer.className = "mechContainer flex between width-100 gap10";
+  mechContainer.className = "mechContainer flex-wrap flex between width-100 gap10";
   mechContainer.id = "mechContainer flex-wrap";
 
   const blogPostGrid = document.createElement("div");
@@ -89,13 +89,13 @@ const makeCarousel = async (carouselDiv, blogs) => {
   dots.className = "slide-indicators";
 
   let dot1 = document.createElement("span");
-  dot1.className = "dot active";
+  dot1.className = "dot cursor active";
 
   let dot2 = document.createElement("span");
-  dot2.className = "dot";
+  dot2.className = "dot cursor";
 
   let dot3 = document.createElement("span");
-  dot3.className = "dot";
+  dot3.className = "dot cursor";
 
   let carouselImgs = document.createElement("div");
   carouselImgs.className = "width-100 heigt-100";
