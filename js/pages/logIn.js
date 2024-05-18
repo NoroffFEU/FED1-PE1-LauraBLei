@@ -1,6 +1,6 @@
-import { makeHeader } from "../components/header.js";
-import { makeFooter } from "../components/footer.js";
-import { handleLogIn } from "../components/handleLogin.js";
+import { makeHeader } from "../components/header.mjs";
+import { makeFooter } from "../components/footer.mjs";
+import { handleLogIn } from "../components/handleLogin.mjs";
 
 const runPage = () => {
     makePage()

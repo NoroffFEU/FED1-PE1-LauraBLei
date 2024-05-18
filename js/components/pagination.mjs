@@ -8,7 +8,6 @@ export const makePagination = (blogs) => {
   let currentPage = 1;
   makePaginationNumbers(pages, blogs, currentPage,container)
   calculatePage(blogs, currentPage)
-  // searchMech(blogs)
 };
 
 const makePaginationNumbers = (pages, blogs, currentPage,container) => {

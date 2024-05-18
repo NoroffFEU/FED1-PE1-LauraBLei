@@ -1,7 +1,7 @@
-import { makeHeader } from "../components/header.js";
-import { makeFooter } from "../components/footer.js";
-import { doFetch } from "../components/fetch.js";
-import { carousel } from "../components/carousel.js";
+import { makeHeader } from "../components/header.mjs";
+import { makeFooter } from "../components/footer.mjs";
+import { doFetch } from "../components/fetch.mjs";
+import { carousel } from "../components/carousel.mjs";
 import { makePagination } from "../components/pagination.mjs";
 import { sortBy } from "../components/sortBy.mjs";
 import { filterBy } from "../components/filterBy.mjs";

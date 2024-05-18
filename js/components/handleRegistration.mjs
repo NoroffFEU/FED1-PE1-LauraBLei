@@ -1,4 +1,4 @@
-import { doFetch } from "./fetch.js";
+import { doFetch } from "./fetch.mjs";
 
 export const handleRegistration = () => {
     let form = document.getElementById("registrationForm")

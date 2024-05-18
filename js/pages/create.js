@@ -1,6 +1,6 @@
-import { makeHeader } from "../components/header.js";
-import { makeFooter } from "../components/footer.js";
-import { doFetch } from "../components/fetch.js";
+import { makeHeader } from "../components/header.mjs";
+import { makeFooter } from "../components/footer.mjs";
+import { doFetch } from "../components/fetch.mjs";
 
 const runPage = () => {
   makePage()
