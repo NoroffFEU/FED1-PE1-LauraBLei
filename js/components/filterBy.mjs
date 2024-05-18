@@ -19,8 +19,8 @@ const filterByTag = (tag, blogs) => {
   } else {
     let sortedList = blogs.filter((blog) => {
       const checkthis = blog.tags.find((element ) => element === tag);
+      return checkthis;
     });
-    return checkthis;
     console.log("filter blogs:", sortedList);
 
     makePagination(sortedList);
