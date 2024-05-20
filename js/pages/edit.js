@@ -149,7 +149,7 @@ const makeForms = (container, imageBox, blog, id) => {
       body: formData.get("text"),
       media: {
         url: formData.get("image"),
-        alt: formData.get("title"),
+        alt: 'Image for Blog Post: ' + formData.get("title"),
       },
       tags: formData.get("tag").split(" "),
       // Add other form fields as needed
