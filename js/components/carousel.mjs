@@ -6,7 +6,7 @@ export const carousel = () => {
   const dots = document.querySelectorAll(".dot");
   const imgs = document.querySelectorAll(".carouselBox");
   const totalImgs = imgs.length;
-  const imgPosition = 0;
+  let imgPosition = 0;
 
   const updatePosition = () => {
     for (let img of imgs) {

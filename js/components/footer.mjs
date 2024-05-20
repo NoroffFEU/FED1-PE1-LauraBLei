@@ -20,7 +20,7 @@ const desktopVersion = (isFrontPage) => {
 
   const information = document.createElement("h3");
   information.innerText = "Information";
-  information.className = "headerText";
+  information.className = "footerHeader";
 
   const instagram = document.createElement("a");
   instagram.innerText = "Instagram";
@@ -48,7 +48,7 @@ const desktopVersion = (isFrontPage) => {
 
   const aboutUsHeadline = document.createElement("h3");
   aboutUsHeadline.innerText = "About Us";
-  aboutUsHeadline.className = "headerText";
+  aboutUsHeadline.className = "footerHeader";
 
   const aboutUs = document.createElement("a");
   aboutUs.innerText = "About Us";
