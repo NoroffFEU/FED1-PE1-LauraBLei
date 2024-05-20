@@ -117,7 +117,7 @@ const tabletHeader = (isFrontPage, userInfo) => {
   let details = document.createElement("details");
 
   let menuButton = document.createElement("summary");
-  menuButton.className = "menuButton headerText";
+  menuButton.className = "menuButton headerText list-style-none";
 
   let menuImg = document.createElement("img");
   if (isFrontPage) {
@@ -127,7 +127,7 @@ const tabletHeader = (isFrontPage, userInfo) => {
   }
 
   let ul = document.createElement("ul");
-  ul.className = "boxMenu flex justify-center items-center";
+  ul.className = "boxMenu flex justify-center items-center list-style-none position-absolute shadow z-index2 flex-wrap width-100";
 
   let createPost = document.createElement("a");
   createPost.innerText = "+ Create Post";
