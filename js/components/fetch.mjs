@@ -5,27 +5,26 @@ import { hideLoader } from "./loader.mjs";
 //  Register url: https://v2.api.noroff.dev/auth/register  //
 
 export const doFetch = async (method, noroffapi, body) => {
-  let userInfo = JSON.parse(localStorage.getItem("userInfo"));
-  let accessToken = "";
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  const accessToken = "";
   if (userInfo) {
     accessToken = userInfo.accessToken;
   }
-    showLoader();
-    try {
-      const response = await fetch(noroffapi, {
-        method: method,
-        headers: {
-          "content-Type": "application/json",
-          Authorization: "Bearer " + accessToken,
-        },
-        body: JSON.stringify(body),
-      });
-      const data = await response.json();
-      return data.data;
-    } catch (err) {
-      alert("something went wrong")
-    }finally{
-      hideLoader()
-    }
-  
+  showLoader();
+  try {
+    const response = await fetch(noroffapi, {
+      method: method,
+      headers: {
+        "content-Type": "application/json",
+        Authorization: "Bearer " + accessToken,
+      },
+      body: JSON.stringify(body),
+    });
+    const data = await response.json();
+    return data.data;
+  } catch (err) {
+    alert("something went wrong");
+  } finally {
+    hideLoader();
+  }
 };

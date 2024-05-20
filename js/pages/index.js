@@ -75,55 +75,55 @@ const makePage = (blogs) => {
 const makeCarousel = async (carouselDiv, blogs) => {
   const latestPosts = blogs.slice(0, 3);
 
-  let leftButton = document.createElement("img");
+  const leftButton = document.createElement("img");
   leftButton.src = "./public/Left.png";
   leftButton.id = "prevBtn";
   leftButton.className =
     "carouselButtons position-absolute z-index2 position-left cursor prevBtn";
 
-  let rightButton = document.createElement("img");
+  const rightButton = document.createElement("img");
   rightButton.src = "./public/Right.png";
   rightButton.id = "nextBtn";
   rightButton.className =
     "carouselButtons position-absolute z-index2 position-right cursor nextBtn";
 
-  let dots = document.createElement("div");
+  const dots = document.createElement("div");
   dots.id = "slide-indicators";
   dots.className = "slide-indicators";
 
-  let dot1 = document.createElement("span");
+  const dot1 = document.createElement("span");
   dot1.className = "dot cursor active";
 
-  let dot2 = document.createElement("span");
+  const dot2 = document.createElement("span");
   dot2.className = "dot cursor";
 
-  let dot3 = document.createElement("span");
+  const dot3 = document.createElement("span");
   dot3.className = "dot cursor";
 
-  let carouselImgs = document.createElement("div");
+  const carouselImgs = document.createElement("div");
   carouselImgs.className = "width-100 heigt-100";
 
   carouselDiv.append(leftButton, rightButton, carouselImgs, dots);
   dots.append(dot1, dot2, dot3);
 
   latestPosts.forEach((blog) => {
-    let carouselBox = document.createElement("div");
+    const carouselBox = document.createElement("div");
     carouselBox.className =
       "carouselBox visible justify-center items-center carouselImageContainer overflow-hidden shadow width-100";
-    let image = document.createElement("img");
+    const image = document.createElement("img");
     image.src = blog.media.url;
     image.alt = blog.media.alt;
     image.className = "width-100 height-100 object-fit carouselImg";
 
-    let textBox = document.createElement("div");
+    const textBox = document.createElement("div");
     textBox.className =
       "carouselButtons position-absolute gap10 flex flex-col items-center position-right textBoxCarousel";
 
-    let title = document.createElement("h2");
+    const title = document.createElement("h2");
     title.innerText = blog.title;
     title.className = "headerTwo";
 
-    let button = document.createElement("button");
+    const button = document.createElement("button");
     button.innerText = "Read More";
     button.className = "smallBlueButton";
     button.addEventListener("click", () => {

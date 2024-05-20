@@ -9,7 +9,7 @@ export const searchMech = (blogs) => {
     const value = e.target.value.toLowerCase();
     const newBlogs = blogs.filter((blog) => {
       if (value === "") {
-        return true
+        return true;
       } else {
         return blog.title.toLowerCase().includes(value);
       }

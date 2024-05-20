@@ -16,8 +16,8 @@ const filterByTag = (tag, blogs) => {
   if (tag === "Show All") {
     makePagination(blogs);
   } else {
-    let sortedList = blogs.filter((blog) => {
-      const checkthis = blog.tags.find((element ) => element === tag);
+    const sortedList = blogs.filter((blog) => {
+      const checkthis = blog.tags.find((element) => element === tag);
       return checkthis;
     });
 

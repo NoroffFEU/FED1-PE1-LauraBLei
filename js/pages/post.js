@@ -9,78 +9,99 @@ const runPage = () => {
 };
 
 const makePage = async () => {
-  const id = window.location.search.slice(1)
-  const months = ["January", "February","March","April","June","July","August","September","October","November","December"]
-  let blog = await doFetch("GET", "https://v2.api.noroff.dev/blog/posts/Tompe/"+id)
+  const id = window.location.search.slice(1);
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const blog = await doFetch(
+    "GET",
+    "https://v2.api.noroff.dev/blog/posts/Tompe/" + id
+  );
 
-  let main = document.querySelector("main");
+  const main = document.querySelector("main");
 
-  let container = document.createElement("div");
+  const container = document.createElement("div");
   container.className = "container";
 
-  let imageBox = document.createElement("div");
-  imageBox.className = "postImageContainer width-100 overflow-hidden shadow"
+  const imageBox = document.createElement("div");
+  imageBox.className = "postImageContainer width-100 overflow-hidden shadow";
 
-  let postImage = document.createElement("img");
-  postImage.className = "object-fit width-100 height-100"
-  postImage.src = blog.media.url
+  const postImage = document.createElement("img");
+  postImage.className = "object-fit width-100 height-100";
+  postImage.src = blog.media.url;
 
-  let editButton = document.createElement("button");
+  const editButton = document.createElement("button");
   editButton.innerText = "Edit";
   editButton.className = "smallBrownButton position-right";
-  if(localStorage.getItem("userInfo")){
-    editButton.style.display = "block"
-  }else{
-    editButton.style.display = "none"
+  if (localStorage.getItem("userInfo")) {
+    editButton.style.display = "block";
+  } else {
+    editButton.style.display = "none";
   }
   editButton.onclick = () => {
-    window.location.href = "edit.html" + "?" + id
-}
+    window.location.href = "edit.html" + "?" + id;
+  };
 
-  let postTitle = document.createElement("h1");
+  const postTitle = document.createElement("h1");
   postTitle.innerText = blog.title;
   postTitle.className = "headerOne";
 
-  let textContainer = document.createElement("div");
-  textContainer.className = "flex flex-col gap10 shadow textBox"
+  const textContainer = document.createElement("div");
+  textContainer.className = "flex flex-col gap10 shadow textBox";
 
-  let tagContainer = document.createElement("div")
-  tagContainer.className = "flex gap10"
+  const tagContainer = document.createElement("div");
+  tagContainer.className = "flex gap10";
 
-  let tagText = document.createElement("p")
-  tagText.innerText = "Tags:"
+  const tagText = document.createElement("p");
+  tagText.innerText = "Tags:";
 
-  let tags = document.createElement("p")
-  tags.innerText = blog.tags
+  const tags = document.createElement("p");
+  tags.innerText = blog.tags;
 
-  let authorContainer = document.createElement("div");
-  authorContainer.className = "flex gap10"
+  const authorContainer = document.createElement("div");
+  authorContainer.className = "flex gap10";
 
-  let authorText = document.createElement("p");
+  const authorText = document.createElement("p");
   authorText.innerText = "Author:";
 
-  let author = document.createElement("p");
+  const author = document.createElement("p");
   author.innerText = blog.author.name;
 
-  let publicationContainer = document.createElement("div");
-  publicationContainer.className = "flex gap10"
+  const publicationContainer = document.createElement("div");
+  publicationContainer.className = "flex gap10";
 
-  let publicationDateText = document.createElement("p");
+  const publicationDateText = document.createElement("p");
   publicationDateText.innerText = "Publication date:";
 
-  let publicationDate = document.createElement("p");
-  let formattedDate= new Date(blog.created)
-  publicationDate.innerText = `${formattedDate.getDate()} ${months[formattedDate.getMonth()]} ${formattedDate.getFullYear()}`;
+  const publicationDate = document.createElement("p");
+  const formattedDate = new Date(blog.created);
+  publicationDate.innerText = `${formattedDate.getDate()} ${
+    months[formattedDate.getMonth()]
+  } ${formattedDate.getFullYear()}`;
 
-  let postText = document.createElement("p");
-  postText.innerText = blog.body
-    
+  const postText = document.createElement("p");
+  postText.innerText = blog.body;
 
   main.appendChild(container);
   container.append(imageBox, editButton, postTitle, textContainer);
   imageBox.appendChild(postImage);
-  textContainer.append(tagContainer, authorContainer, publicationContainer, postText);
-  tagContainer.append(tagText, tags)
+  textContainer.append(
+    tagContainer,
+    authorContainer,
+    publicationContainer,
+    postText
+  );
+  tagContainer.append(tagText, tags);
   authorContainer.append(authorText, author);
   publicationContainer.append(publicationDateText, publicationDate);
 };
