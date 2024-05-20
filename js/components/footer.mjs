@@ -38,6 +38,7 @@ const desktopVersion = (isFrontPage) => {
     logo.src = "../public/Logo.png";
   }
   logo.className = "logo footerLogo";
+  logo.alt = "logo"
 
   const aboutUsBox = document.createElement("div");
   aboutUsBox.className = "flex flex-col marginBotTop items-center aboutUsBox";

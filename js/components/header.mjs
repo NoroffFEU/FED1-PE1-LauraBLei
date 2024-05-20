@@ -22,6 +22,7 @@ const desktopHeader = (isFrontPage, userInfo) => {
     logo.src = "../public/Logo.png";
   }
   logo.className = "cursor logo";
+  logo.alt = "logo"
 
   logo.addEventListener("click", () => {
     if (isFrontPage) {
@@ -103,6 +104,7 @@ const tabletHeader = (isFrontPage, userInfo) => {
     logo.src = "../public/Logo.png";
   }
   logo.className = "cursor logo";
+  logo.alt = "logo"
   logo.addEventListener("click", () => {
     if (isFrontPage) {
       window.location.href = "index.html";

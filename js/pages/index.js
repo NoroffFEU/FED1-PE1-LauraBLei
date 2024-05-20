@@ -77,12 +77,14 @@ const makeCarousel = async (carouselDiv, blogs) => {
 
   const leftButton = document.createElement("img");
   leftButton.src = "./public/Left.png";
+  leftButton.alt = "left carousel button"
   leftButton.id = "prevBtn";
   leftButton.className =
     "carouselButtons position-absolute z-index2 position-left cursor prevBtn";
 
   const rightButton = document.createElement("img");
   rightButton.src = "./public/Right.png";
+  rightButton.alt = "right carousel Button"
   rightButton.id = "nextBtn";
   rightButton.className =
     "carouselButtons position-absolute z-index2 position-right cursor nextBtn";
