@@ -6,7 +6,7 @@ import { hideLoader } from "./loader.mjs";
 
 export const doFetch = async (method, noroffapi, body) => {
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-  const accessToken = "";
+  let accessToken = "";
   if (userInfo) {
     accessToken = userInfo.accessToken;
   }
