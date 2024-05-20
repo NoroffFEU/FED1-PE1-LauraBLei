@@ -1,7 +1,9 @@
 export const makeFooter = () => {
-  const isFrontPage =
+  const isFrontPage = !(
     window.location.pathname.includes("post") ||
-    window.location.pathname.includes("account");
+    window.location.pathname.includes("account")
+  );
+
   desktopVersion(isFrontPage);
   tabletVersion(isFrontPage);
 };
@@ -22,13 +24,12 @@ const desktopVersion = (isFrontPage) => {
   const instagram = document.createElement("a");
   instagram.innerText = "Instagram";
   instagram.className = "footerText styles-none cursor";
-  instagram.href = "https://www.instagram.com/marley_the_dog_dk/"
+  instagram.href = "https://www.instagram.com/marley_the_dog_dk/";
 
   const tikTok = document.createElement("a");
   tikTok.innerText = "Tik Tok";
   tikTok.className = "footerText styles-none cursor";
-  tikTok.href = "https://www.tiktok.com/@marley_the_dog_no"
-
+  tikTok.href = "https://www.tiktok.com/@marley_the_dog_no";
 
   const logo = document.createElement("img");
   if (isFrontPage) {
@@ -37,7 +38,7 @@ const desktopVersion = (isFrontPage) => {
     logo.src = "../public/Logo.png";
   }
   logo.className = "logo footerLogo";
-  logo.alt = "logo"
+  logo.alt = "logo";
 
   const aboutUsBox = document.createElement("div");
   aboutUsBox.className = "flex flex-col marginBotTop items-center aboutUsBox";
@@ -50,18 +51,14 @@ const desktopVersion = (isFrontPage) => {
   aboutUs.innerText = "About Us";
   aboutUs.className = "footerText styles-none cursor";
   if (isFrontPage) {
-    aboutUs.href = "./about/marley.html"
+    aboutUs.href = "./about/marley.html";
   } else {
-    aboutUs.href = "../about/marley.html"
+    aboutUs.href = "../about/marley.html";
   }
 
   footer.appendChild(container);
   container.append(informationBox, logo, aboutUsBox);
-  informationBox.append(
-    information,
-    instagram,
-    tikTok
-  );
+  informationBox.append(information, instagram, tikTok);
   aboutUsBox.append(aboutUsHeadline, aboutUs);
 };
 

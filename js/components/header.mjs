@@ -1,7 +1,8 @@
 export const makeHeader = () => {
-  const isFrontPage =
+  const isFrontPage = !(
     window.location.pathname.includes("post") ||
-    window.location.pathname.includes("account");
+    window.location.pathname.includes("account")
+  );
 
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
@@ -22,7 +23,7 @@ const desktopHeader = (isFrontPage, userInfo) => {
     logo.src = "../public/Logo.png";
   }
   logo.className = "cursor logo";
-  logo.alt = "logo"
+  logo.alt = "logo";
 
   logo.addEventListener("click", () => {
     if (isFrontPage) {
@@ -104,7 +105,7 @@ const tabletHeader = (isFrontPage, userInfo) => {
     logo.src = "../public/Logo.png";
   }
   logo.className = "cursor logo";
-  logo.alt = "logo"
+  logo.alt = "logo";
   logo.addEventListener("click", () => {
     if (isFrontPage) {
       window.location.href = "index.html";
@@ -182,11 +183,10 @@ const tabletHeader = (isFrontPage, userInfo) => {
   aboutUs.innerText = "About Us";
   aboutUs.className = "headerTwo marginBotTop cursor styles-none";
   if (isFrontPage) {
-    aboutUs.href = "./about/marley.html"
+    aboutUs.href = "./about/marley.html";
   } else {
-    aboutUs.href = "../about/marley.html"
+    aboutUs.href = "../about/marley.html";
   }
-
 
   header.appendChild(container);
   container.append(logo, details);
