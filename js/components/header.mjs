@@ -1,7 +1,8 @@
 export const makeHeader = () => {
   const isFrontPage = !(
     window.location.pathname.includes("post") ||
-    window.location.pathname.includes("account")
+    window.location.pathname.includes("account")||
+    window.location.pathname.includes("about")
   );
 
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
