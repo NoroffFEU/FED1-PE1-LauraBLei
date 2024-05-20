@@ -81,6 +81,7 @@ const makeForms = (container, imageBox, blog, id) => {
   tagInput.name = "tag";
   tagInput.className = "titleInput";
   tagInput.placeholder = "Insert a tag here..";
+  tagInput.defaultValue = blog.tags
 
   const titleFormBox = document.createElement("div");
   titleFormBox.className = "inputBox";
