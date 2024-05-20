@@ -19,17 +19,16 @@ const desktopVersion = (isFrontPage) => {
   information.innerText = "Information";
   information.className = "headerText";
 
-  const contactUs = document.createElement("a");
-  contactUs.innerText = "Contact Us";
-  contactUs.className = "footerText";
+  const instagram = document.createElement("a");
+  instagram.innerText = "Instagram";
+  instagram.className = "footerText styles-none cursor";
+  instagram.href = "https://www.instagram.com/marley_the_dog_dk/"
 
-  const priacyPolicy = document.createElement("a");
-  priacyPolicy.innerText = "Privacy Policy";
-  priacyPolicy.className = "footerText";
+  const tikTok = document.createElement("a");
+  tikTok.innerText = "Tik Tok";
+  tikTok.className = "footerText styles-none cursor";
+  tikTok.href = "https://www.tiktok.com/@marley_the_dog_no"
 
-  const termsAndConditions = document.createElement("a");
-  termsAndConditions.innerText = "Terms And Conditions";
-  termsAndConditions.className = "footerText";
 
   const logo = document.createElement("img");
   if (isFrontPage) {
@@ -47,23 +46,23 @@ const desktopVersion = (isFrontPage) => {
   aboutUsHeadline.innerText = "About Us";
   aboutUsHeadline.className = "headerText";
 
-  const sponsers = document.createElement("a");
-  sponsers.innerText = "Sponsers";
-  sponsers.className = "footerText";
-
   const aboutUs = document.createElement("a");
   aboutUs.innerText = "About Us";
-  aboutUs.className = "footerText";
+  aboutUs.className = "footerText styles-none cursor";
+  if (isFrontPage) {
+    aboutUs.href = "./about/marley.html"
+  } else {
+    aboutUs.href = "../about/marley.html"
+  }
 
   footer.appendChild(container);
   container.append(informationBox, logo, aboutUsBox);
   informationBox.append(
     information,
-    contactUs,
-    priacyPolicy,
-    termsAndConditions
+    instagram,
+    tikTok
   );
-  aboutUsBox.append(aboutUsHeadline, sponsers, aboutUs);
+  aboutUsBox.append(aboutUsHeadline, aboutUs);
 };
 
 const tabletVersion = () => {};

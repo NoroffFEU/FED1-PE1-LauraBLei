@@ -103,7 +103,7 @@ const makeCarousel = async (carouselDiv, blogs) => {
   dot3.className = "dot cursor";
 
   const carouselImgs = document.createElement("div");
-  carouselImgs.className = "width-100 heigt-100";
+  carouselImgs.className = "width-100 height-100";
 
   carouselDiv.append(leftButton, rightButton, carouselImgs, dots);
   dots.append(dot1, dot2, dot3);

@@ -64,6 +64,11 @@
 }
 
 /* position */
+.marginAbout {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
 .z-index2 {
   z-index: 2;
 }

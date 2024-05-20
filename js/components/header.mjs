@@ -180,15 +180,17 @@ const tabletHeader = (isFrontPage, userInfo) => {
 
   const aboutUs = document.createElement("a");
   aboutUs.innerText = "About Us";
-  aboutUs.className = "headerTwo marginBotTop";
+  aboutUs.className = "headerTwo marginBotTop cursor styles-none";
+  if (isFrontPage) {
+    aboutUs.href = "./about/marley.html"
+  } else {
+    aboutUs.href = "../about/marley.html"
+  }
 
-  const sponsers = document.createElement("a");
-  sponsers.innerText = "Sponsers";
-  sponsers.className = "headerTwo marginBotTop styles-none";
 
   header.appendChild(container);
   container.append(logo, details);
   details.append(menuButton, ul);
   menuButton.appendChild(menuImg);
-  ul.append(home, aboutUs, sponsers, logIn, createPost, logOut);
+  ul.append(home, aboutUs, logIn, createPost, logOut);
 };
