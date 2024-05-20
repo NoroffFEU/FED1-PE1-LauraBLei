@@ -121,6 +121,7 @@ const tabletHeader = (isFrontPage, userInfo) => {
   menuButton.className = "menuButton headerText list-style-none";
 
   const menuImg = document.createElement("img");
+  menuImg.alt = "menu"
   if (isFrontPage) {
     menuImg.src = "./public/Menu.png";
   } else {
