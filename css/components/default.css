@@ -90,5 +90,6 @@ p {
 .footerText {
   font-family: "Playfair Display";
   font-size: 25px;
+  color: var(--black);
 }
 
