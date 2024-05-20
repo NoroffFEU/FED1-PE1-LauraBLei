@@ -152,7 +152,7 @@ const makeForms = (container, imageBox, blog, id) => {
         url: formData.get("image"),
         alt: 'Image for Blog Post: ' + formData.get("title"),
       },
-      tags: formData.get("tag").split(" "),
+      tags: formData.get("tag").split(","),
       // Add other form fields as needed
     };
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
