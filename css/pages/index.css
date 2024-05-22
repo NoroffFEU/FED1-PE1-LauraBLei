@@ -47,7 +47,7 @@
 }
 
 .notActive:hover {
-  color: var(--blue);
+  font-size: 25px;
 }
 /*---------------Carousel--------------*/
 
