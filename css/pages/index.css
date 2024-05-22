@@ -39,6 +39,16 @@
   filter: brightness(0.5);
 }
 
+.activePage {
+  color: var(--brown);
+  font-family: Playball;
+  font-size: 25px;
+  margin: 10px;
+}
+
+.notActive:hover {
+  color: var(--blue);
+}
 /*---------------Carousel--------------*/
 
 .slide-indicators {

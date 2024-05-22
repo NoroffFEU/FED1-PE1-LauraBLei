@@ -14,13 +14,29 @@ const makePaginationNumbers = (pages, blogs, currentPage, container) => {
   for (let index = 1; index <= pages; index++) {
     const pageNumber = document.createElement("a");
     pageNumber.innerText = index;
-    pageNumber.className = `paginationButton alternativeHeadline cursor`;
-
+    pageNumber.className = `paginationButton alternativeHeadline cursor notActive`;
+    if (currentPage === index) {
+      pageNumber.className = "activePage";
+    }
     pageNumber.addEventListener("click", () => {
       currentPage = index;
       calculatePage(blogs, currentPage, container);
+      updatePageNumber(currentPage, pageNumber, index);
     });
     paginationContainer.appendChild(pageNumber);
+  }
+};
+
+const updatePageNumber = (currentPage, pageNumber, index) => {
+  console.log("currentPage: ", currentPage);
+  console.log("index:", index);
+  const oldPage = document.querySelector(".activePage");
+  if (oldPage) {
+    oldPage.classList.remove("activePage");
+    oldPage.className = `paginationButton alternativeHeadline cursor notActive`;
+  }
+  if (currentPage === index) {
+    pageNumber.className = "activePage";
   }
 };
 
