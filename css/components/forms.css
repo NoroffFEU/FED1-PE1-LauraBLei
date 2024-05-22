@@ -22,25 +22,25 @@
   font-family: "Playfair Display";
 }
 
-.form{
-    gap: 35px;
-    margin: 25px;
+.form {
+  gap: 35px;
+  margin: 25px;
 }
 
-.inputBox{
+.inputBox {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.loginForms{
+.loginForms {
   padding: 15px;
   border: 2px solid var(--brown);
   color: var(--black);
   text-align: left;
 }
 
-.searchInput{
+.searchInput {
   background-color: var(--blue);
   border: none;
   padding: 6px;
@@ -52,26 +52,26 @@
   padding-left: 50px;
   background-size: 30px;
   background-position: 5px center;
-  height: 43px
+  height: 43px;
 }
 
-.searchInput::placeholder{
+.searchInput::placeholder {
   color: var(--white);
 }
 
 @media screen and (max-width: 915px) {
-  .textInput{
+  .textInput {
     width: 270px;
     height: 300px;
   }
 
-  .titleInput{
+  .titleInput {
     width: 270px;
     height: 40px;
     margin: 0;
   }
-  
-  .inputBox{
+
+  .inputBox {
     flex-direction: column;
     gap: 20px;
   }

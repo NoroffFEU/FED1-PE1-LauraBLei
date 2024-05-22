@@ -1,9 +1,6 @@
 import { showLoader } from "./loader.mjs";
 import { hideLoader } from "./loader.mjs";
 
-//  Post url: https://v2.api.noroff.dev/blog/posts/Tompe  //
-//  Register url: https://v2.api.noroff.dev/auth/register  //
-
 export const doFetch = async (method, noroffapi, body) => {
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   let accessToken = "";

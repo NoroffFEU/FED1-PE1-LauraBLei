@@ -1,12 +1,11 @@
 export const makeFooter = () => {
   const isFrontPage = !(
     window.location.pathname.includes("post") ||
-    window.location.pathname.includes("account")||
+    window.location.pathname.includes("account") ||
     window.location.pathname.includes("about")
   );
 
   desktopVersion(isFrontPage);
-  tabletVersion(isFrontPage);
 };
 
 const desktopVersion = (isFrontPage) => {
@@ -26,13 +25,13 @@ const desktopVersion = (isFrontPage) => {
   instagram.innerText = "Instagram";
   instagram.className = "footerText styles-none cursor";
   instagram.href = "https://www.instagram.com/marley_the_dog_dk/";
-  instagram.target = "_blank"
+  instagram.target = "_blank";
 
   const tikTok = document.createElement("a");
   tikTok.innerText = "Tik Tok";
   tikTok.className = "footerText styles-none cursor";
   tikTok.href = "https://www.tiktok.com/@marley_the_dog_no";
-  tikTok.target = "_blank"
+  tikTok.target = "_blank";
 
   const logo = document.createElement("img");
   if (isFrontPage) {
@@ -64,5 +63,3 @@ const desktopVersion = (isFrontPage) => {
   informationBox.append(information, instagram, tikTok);
   aboutUsBox.append(aboutUsHeadline, aboutUs);
 };
-
-const tabletVersion = () => {};

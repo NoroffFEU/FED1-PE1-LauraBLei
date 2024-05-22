@@ -72,19 +72,19 @@ const makePage = (blogs) => {
   makeBlogPostGrid(blogs, mechContainer);
 };
 
-const makeCarousel = async (carouselDiv, blogs) => {
+const makeCarousel = (carouselDiv, blogs) => {
   const latestPosts = blogs.slice(0, 3);
 
   const leftButton = document.createElement("img");
   leftButton.src = "./public/Left.png";
-  leftButton.alt = "left carousel button"
+  leftButton.alt = "left carousel button";
   leftButton.id = "prevBtn";
   leftButton.className =
     "carouselButtons position-absolute z-index2 position-left cursor prevBtn";
 
   const rightButton = document.createElement("img");
   rightButton.src = "./public/Right.png";
-  rightButton.alt = "right carousel Button"
+  rightButton.alt = "right carousel Button";
   rightButton.id = "nextBtn";
   rightButton.className =
     "carouselButtons position-absolute z-index2 position-right cursor nextBtn";
@@ -139,7 +139,7 @@ const makeCarousel = async (carouselDiv, blogs) => {
   carousel();
 };
 
-const makeBlogPostGrid = async (blogs, mechContainer) => {
+const makeBlogPostGrid = (blogs, mechContainer) => {
   const buttonContainer = document.createElement("div");
   buttonContainer.className = "flex between width-100 btnContainer flex-wrap ";
 

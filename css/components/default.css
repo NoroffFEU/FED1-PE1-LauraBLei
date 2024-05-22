@@ -42,7 +42,8 @@ main {
   flex: 1;
 }
 
-.headerText, .footerHeader {
+.headerText,
+.footerHeader {
   color: var(--black);
   font-family: "Playfair Display SC";
   font-size: 2rem;
@@ -52,7 +53,8 @@ main {
   text-decoration: none;
 }
 
-.headerText:hover, .footerText:hover{
+.headerText:hover,
+.footerText:hover {
   color: var(--brown);
 }
 
@@ -96,4 +98,3 @@ p {
   font-size: 25px;
   color: var(--black);
 }
-

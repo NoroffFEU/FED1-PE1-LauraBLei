@@ -46,14 +46,9 @@ const makePage = () => {
   button.innerText = "Log In";
   button.className = "brownButton";
 
-  const registerButton = document.createElement("a");
-  registerButton.innerText = "Register";
-  registerButton.className = "alternativeHeadline styles-none";
-  registerButton.href = "./register.html";
-
   main.appendChild(container);
   container.append(h1, form);
-  form.append(email, password, button, registerButton);
+  form.append(email, password, button);
 };
 
 runPage();

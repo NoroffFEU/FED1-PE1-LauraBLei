@@ -1,6 +1,6 @@
 // Code learned from: https://www.youtube.com/watch?v=TlP5WIxVirU //
 
-import { displayPage, makePagination } from "./pagination.mjs";
+import { makePagination } from "./pagination.mjs";
 
 export const searchMech = (blogs) => {
   const searchInput = document.querySelector("[data-search]");

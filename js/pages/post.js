@@ -2,8 +2,8 @@ import { makeHeader } from "../components/header.mjs";
 import { makeFooter } from "../components/footer.mjs";
 import { doFetch } from "../components/fetch.mjs";
 
-const runPage = () => {
-  makePage();
+const runPage = async () => {
+  await makePage();
   makeHeader();
   makeFooter();
 };
@@ -39,7 +39,7 @@ const makePage = async () => {
   const postImage = document.createElement("img");
   postImage.className = "object-fit width-100 height-100";
   postImage.src = blog.media.url;
-  postImage.alt = blog.media.alt
+  postImage.alt = blog.media.alt;
 
   const editButton = document.createElement("button");
   editButton.innerText = "Edit";

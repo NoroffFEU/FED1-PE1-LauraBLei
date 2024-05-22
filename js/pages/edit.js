@@ -49,7 +49,7 @@ const makeForms = (container, imageBox, blog, id) => {
   imageInput.className = "titleInput";
   imageInput.placeholder = "insert image URL here..";
   imageInput.defaultValue = blog.media.url;
-  const imageInputEvent = (event) => {
+  const imageInputEvent = () => {
     const existingImagePreview = imageBox.querySelector(".postImage");
     if (existingImagePreview) {
       existingImagePreview.remove();
@@ -81,7 +81,7 @@ const makeForms = (container, imageBox, blog, id) => {
   tagInput.name = "tag";
   tagInput.className = "titleInput";
   tagInput.placeholder = "Insert a tag here..";
-  tagInput.defaultValue = blog.tags
+  tagInput.defaultValue = blog.tags;
 
   const titleFormBox = document.createElement("div");
   titleFormBox.className = "inputBox";
@@ -150,10 +150,9 @@ const makeForms = (container, imageBox, blog, id) => {
       body: formData.get("text"),
       media: {
         url: formData.get("image"),
-        alt: 'Image for Blog Post: ' + formData.get("title"),
+        alt: "Image for Blog Post: " + formData.get("title"),
       },
       tags: formData.get("tag").split(","),
-      // Add other form fields as needed
     };
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 

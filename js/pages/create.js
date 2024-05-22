@@ -44,7 +44,7 @@ const makeForms = (container, imageBox) => {
   imageInput.className = "titleInput";
   imageInput.placeholder = "Insert image url here..";
 
-  imageInput.addEventListener("input", (event) => {
+  imageInput.addEventListener("input", () => {
     const existingImagePreview = imageBox.querySelector(".postImage");
     if (existingImagePreview) {
       existingImagePreview.remove();
@@ -127,7 +127,7 @@ const makeForms = (container, imageBox) => {
       body: formData.get("text"),
       media: {
         url: formData.get("image"),
-        alt: 'Image for Blog Post: ' + formData.get("title"),
+        alt: "Image for Blog Post: " + formData.get("title"),
       },
       tags: [formData.get("tag")],
       // Add other form fields as needed

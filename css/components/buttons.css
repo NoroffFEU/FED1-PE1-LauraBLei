@@ -1,4 +1,5 @@
-.brownButton, .smallBrownButton {
+.brownButton,
+.smallBrownButton {
   border-radius: 2px;
   border: 1px solid var(--black);
   background: var(--brown, #9e6031);
@@ -8,14 +9,16 @@
   padding: 10px 57px;
 }
 
-.brownButton:hover, .smallBrownButton:hover {
+.brownButton:hover,
+.smallBrownButton:hover {
   border: 1px solid var(--brown);
   background: var(--white, #fff);
   color: var(--brown);
   cursor: pointer;
 }
 
-.blueButton, .smallBlueButton {
+.blueButton,
+.smallBlueButton {
   border-radius: 2px;
   border: 1px solid var(--black, #2f2e2e);
   background: var(--blue, #316f9e);
@@ -27,7 +30,8 @@
   white-space: noWrap;
 }
 
-.blueButton:hover, .smallBlueButton:hover {
+.blueButton:hover,
+.smallBlueButton:hover {
   border-radius: 2px;
   border: 1px solid var(--blue);
   background: var(--white, #fff);
@@ -36,16 +40,16 @@
 }
 
 .smallBrownButton {
-    font-size: 20px;
-    padding: 7px 40px;
+  font-size: 20px;
+  padding: 7px 40px;
 }
 
-.smallBlueButton{
-    font-size: 20px;
-    padding: 7px 40px;
-} 
+.smallBlueButton {
+  font-size: 20px;
+  padding: 7px 40px;
+}
 
-.paginationButton{
+.paginationButton {
   background: none;
   color: var(--white);
   font-size: 20px;
@@ -54,7 +58,7 @@
 }
 
 @media screen and (max-width: 460px) {
-  .smallBlueButton{
+  .smallBlueButton {
     padding: 5px 20px;
     font-size: 14px;
   }

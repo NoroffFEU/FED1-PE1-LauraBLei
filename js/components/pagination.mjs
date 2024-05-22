@@ -1,5 +1,3 @@
-import { searchMech } from "./search.mjs";
-
 const MAX_BLOGS_PER_PAGE = 12;
 
 export const makePagination = (blogs) => {
@@ -43,7 +41,7 @@ export const displayPage = async (blogs) => {
 
     const image = document.createElement("img");
     image.src = blog.media.url;
-    image.alt = blog.media.alt
+    image.alt = blog.media.alt;
     image.className = "postGridImage object-fit width-100 height-100 cursor";
     image.addEventListener("click", () => {
       window.location.href = "post/index.html?" + blog.id;
