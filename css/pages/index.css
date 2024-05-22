@@ -34,6 +34,10 @@
   max-height: 200px;
 }
 
+.postImageBox:hover {
+  transform: scale(1.05);
+}
+
 .postGridImage,
 .carouselImg {
   filter: brightness(0.5);
