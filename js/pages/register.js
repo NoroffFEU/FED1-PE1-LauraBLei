@@ -27,7 +27,7 @@ const makePage = () => {
   email.type = "email";
   email.id = "email";
   email.name = "email";
-  email.placeholder = "email";
+  email.placeholder = "Email";
   email.className = "headerTwo loginForms";
   email.required = true;
 
