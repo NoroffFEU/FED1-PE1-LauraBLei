@@ -33,6 +33,13 @@ const makePage = async () => {
   const container = document.createElement("div");
   container.className = "container";
 
+  const backButton = document.createElement("button");
+  backButton.innerText = "Go Back";
+  backButton.className = "smallBrownButton position-left marginBackButton";
+  backButton.onclick = () => {
+    window.location.href = "../index.html";
+  };
+
   const imageBox = document.createElement("div");
   imageBox.className = "postImageContainer width-100 overflow-hidden shadow";
 
@@ -94,7 +101,7 @@ const makePage = async () => {
   postText.innerText = blog.body;
 
   main.appendChild(container);
-  container.append(imageBox, editButton, postTitle, textContainer);
+  container.append(backButton, imageBox, editButton, postTitle, textContainer);
   imageBox.appendChild(postImage);
   textContainer.append(
     tagContainer,

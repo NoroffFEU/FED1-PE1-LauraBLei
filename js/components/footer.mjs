@@ -15,23 +15,25 @@ const desktopVersion = (isFrontPage) => {
   container.className = "flex justify-evenly desktopFooter";
 
   const informationBox = document.createElement("div");
-  informationBox.className = "flex flex-col marginBotTop items-center";
+  informationBox.className = "flex marginBotTop items-center";
 
-  const information = document.createElement("h3");
-  information.innerText = "Information";
-  information.className = "footerHeader";
+  const instagram = document.createElement("i");
+  instagram.className = "fa-brands fa-instagram fa-2xl";
+  instagram.style.color = "#9e6031";
 
-  const instagram = document.createElement("a");
-  instagram.innerText = "Instagram";
-  instagram.className = "footerText styles-none cursor";
-  instagram.href = "https://www.instagram.com/marley_the_dog_dk/";
-  instagram.target = "_blank";
+  const tikTokA = document.createElement("a");
+  tikTokA.href = "https://www.tiktok.com/@marley_the_dog_no";
+  tikTokA.target = "_blank";
+  tikTokA.className = "marginLinks";
 
-  const tikTok = document.createElement("a");
-  tikTok.innerText = "Tik Tok";
-  tikTok.className = "footerText styles-none cursor";
-  tikTok.href = "https://www.tiktok.com/@marley_the_dog_no";
-  tikTok.target = "_blank";
+  const instagramA = document.createElement("a");
+  instagramA.href = "https://www.instagram.com/marley_the_dog_dk/";
+  instagramA.target = "_blank";
+  instagramA.className = "marginLinks";
+
+  const tikTok = document.createElement("i");
+  tikTok.className = "fa-brands fa-tiktok fa-2xl";
+  tikTok.style.color = "#9e6031";
 
   const logo = document.createElement("img");
   if (isFrontPage) {
@@ -43,11 +45,8 @@ const desktopVersion = (isFrontPage) => {
   logo.alt = "logo";
 
   const aboutUsBox = document.createElement("div");
-  aboutUsBox.className = "flex flex-col marginBotTop items-center aboutUsBox";
-
-  const aboutUsHeadline = document.createElement("h3");
-  aboutUsHeadline.innerText = "About Us";
-  aboutUsHeadline.className = "footerHeader";
+  aboutUsBox.className =
+    "flex flex-col marginBotTop items-center aboutUsBox justify-center";
 
   const aboutUs = document.createElement("a");
   aboutUs.innerText = "About Us";
@@ -60,6 +59,8 @@ const desktopVersion = (isFrontPage) => {
 
   footer.appendChild(container);
   container.append(informationBox, logo, aboutUsBox);
-  informationBox.append(information, instagram, tikTok);
-  aboutUsBox.append(aboutUsHeadline, aboutUs);
+  informationBox.append(instagramA, tikTokA);
+  instagramA.appendChild(instagram);
+  tikTokA.appendChild(tikTok);
+  aboutUsBox.appendChild(aboutUs);
 };
