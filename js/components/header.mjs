@@ -34,9 +34,6 @@ const desktopHeader = (isFrontPage, userInfo, prefix) => {
   const nav = document.createElement("nav");
   nav.className = "justify-evenly header-gap flex";
 
-  const register = document.createElement("a");
-  register.innerText = "Register";
-  register.className = "headerText margin cursor";
   const createPost = document.createElement("a");
   createPost.innerText = "+ Create Post";
 
@@ -67,25 +64,22 @@ const desktopHeader = (isFrontPage, userInfo, prefix) => {
 
   logIn.href = prefix + "account/login.html";
   createPost.href = prefix + "post/create.html";
-  register.href = prefix + "account/register.html";
   home.href = prefix + "index.html";
   logo.src = prefix + "public/Logo.png";
 
   if (userInfo) {
     createPost.style.display = "block";
-    register.style.display = "block";
     logIn.style.display = "none";
     logOut.style.display = "block";
   } else {
     createPost.style.display = "none";
-    register.style.display = "none";
     logIn.style.display = "block";
     logOut.style.display = "none";
   }
 
   header.appendChild(container);
   container.append(logo, nav);
-  nav.append(createPost, home, register, logIn, logOut);
+  nav.append(createPost, home, logIn, logOut);
 };
 
 const tabletHeader = (isFrontPage, userInfo, prefix) => {
@@ -147,13 +141,8 @@ const tabletHeader = (isFrontPage, userInfo, prefix) => {
   aboutUs.innerText = "About Us";
   aboutUs.className = "headerTwo marginBotTop cursor styles-none";
 
-  const register = document.createElement("a");
-  register.innerText = "Register";
-  register.className = "headerTwo marginBotTop cursor styles-none";
-
   logIn.href = prefix + "account/login.html";
   createPost.href = prefix + "post/create.html";
-  register.href = prefix + "account/register.html";
   home.href = prefix + "index.html";
   logo.src = prefix + "public/Logo.png";
   aboutUs.href = prefix + "about/marley.html";
@@ -162,12 +151,10 @@ const tabletHeader = (isFrontPage, userInfo, prefix) => {
 
   if (userInfo) {
     createPost.style.display = "block";
-    register.style.display = "block";
     logIn.style.display = "none";
     logOut.style.display = "block";
   } else {
     createPost.style.display = "none";
-    register.style.display = "none";
     logIn.style.display = "block";
     logOut.style.display = "none";
   }
@@ -176,5 +163,5 @@ const tabletHeader = (isFrontPage, userInfo, prefix) => {
   container.append(logo, details);
   details.append(menuButton, ul);
   menuButton.appendChild(menuImg);
-  ul.append(home, aboutUs, logIn, createPost, register, logOut);
+  ul.append(home, aboutUs, logIn, createPost, logOut);
 };

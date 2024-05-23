@@ -6,6 +6,7 @@ import { makePagination } from "../components/pagination.mjs";
 import { sortBy } from "../components/sortBy.mjs";
 import { filterBy } from "../components/filterBy.mjs";
 import { searchMech } from "../components/search.mjs";
+import { closeDetails } from "../components/closeDetails.mjs";
 
 const runPage = async () => {
   const blogs = await doFetch(
@@ -18,6 +19,7 @@ const runPage = async () => {
   sortBy(blogs);
   filterBy(blogs);
   searchMech(blogs);
+  closeDetails();
 };
 
 const makePage = (blogs) => {
@@ -150,7 +152,8 @@ const makeBlogPostGrid = (blogs, mechContainer) => {
   sortButtonSummary.className = "smallBlueButton list-style-none";
 
   const sortButtonUl = document.createElement("ul");
-  sortButtonUl.className = "list-style-none mechButton position-absolute";
+  sortButtonUl.className =
+    "list-style-none mechButton position-absolute detailsBox";
 
   const sortByNewest = document.createElement("li");
   sortByNewest.innerText = "Newest";
@@ -169,7 +172,8 @@ const makeBlogPostGrid = (blogs, mechContainer) => {
   filterButtonSummary.className = "smallBlueButton list-style-none";
 
   const filterButtonUl = document.createElement("ul");
-  filterButtonUl.className = "list-style-none mechButton position-absolute";
+  filterButtonUl.className =
+    "list-style-none mechButton position-absolute detailsBox";
 
   const showAll = document.createElement("li");
   showAll.innerText = "Show All";
