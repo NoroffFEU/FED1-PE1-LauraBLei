@@ -23,10 +23,17 @@ const runPage = async () => {
 };
 
 const makePage = (blogs) => {
+  const getUserInfo = JSON.parse(localStorage.getItem("userInfo"));
+  const userInfo = getUserInfo ? getUserInfo : "";
   const main = document.querySelector("main");
 
   const container = document.createElement("div");
   container.className = "container";
+
+  const welcomeTitle = document.createElement("h2");
+  welcomeTitle.innerText = "Welcome Back " + userInfo.name;
+  welcomeTitle.className = "headerOne marginBackButton";
+  welcomeTitle.style.display = getUserInfo ? "block" : "none";
 
   const headlineContainerOne = document.createElement("div");
   headlineContainerOne.className = "headlineContainer width-100";
@@ -60,6 +67,7 @@ const makePage = (blogs) => {
 
   main.appendChild(container);
   container.append(
+    welcomeTitle,
     headlineContainerOne,
     carouselDiv,
     headlineContainerTwo,
