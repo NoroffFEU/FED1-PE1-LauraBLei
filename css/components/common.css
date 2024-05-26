@@ -121,3 +121,7 @@
 .background-brown {
   background-color: var(--brown);
 }
+
+.color-black {
+  color: var(--black);
+}

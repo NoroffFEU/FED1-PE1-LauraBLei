@@ -20,6 +20,14 @@ const desktopHeader = (isFrontPage, userInfo, prefix) => {
   const container = document.createElement("div");
   container.className = "flex between items-center desktopHeader";
 
+  const leftHeader = document.createElement("div");
+  leftHeader.className = "flex gap10 items-center";
+
+  const loggedInAs = document.createElement("p");
+  loggedInAs.innerText = "Logged in as: " + userInfo.name;
+  loggedInAs.style.display = userInfo ? "block" : "none";
+  loggedInAs.className = "headerTwo color-black";
+
   const logo = document.createElement("img");
 
   logo.className = "cursor logo";
@@ -78,7 +86,8 @@ const desktopHeader = (isFrontPage, userInfo, prefix) => {
   }
 
   header.appendChild(container);
-  container.append(logo, nav);
+  container.append(leftHeader, nav);
+  leftHeader.append(logo, loggedInAs);
   nav.append(createPost, home, logIn, logOut);
 };
 
@@ -89,6 +98,14 @@ const tabletHeader = (isFrontPage, userInfo, prefix) => {
   container.className = "flex between items-center tabletHeader";
 
   const logo = document.createElement("img");
+
+  const loggedInAsContainer = document.createElement("div");
+  loggedInAsContainer.className = "width-100";
+
+  const loggedInAs = document.createElement("p");
+  loggedInAs.innerText = "Logged in as: " + userInfo.name;
+  loggedInAs.style.display = userInfo ? "block" : "none";
+  loggedInAs.className = "headerTwo";
 
   logo.className = "cursor logo";
   logo.alt = "logo";
@@ -163,5 +180,6 @@ const tabletHeader = (isFrontPage, userInfo, prefix) => {
   container.append(logo, details);
   details.append(menuButton, ul);
   menuButton.appendChild(menuImg);
-  ul.append(home, aboutUs, logIn, createPost, logOut);
+  ul.append(home, aboutUs, logIn, createPost, logOut, loggedInAsContainer);
+  loggedInAsContainer.appendChild(loggedInAs);
 };
