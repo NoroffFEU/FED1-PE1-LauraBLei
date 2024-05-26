@@ -9,6 +9,9 @@ const runPage = async () => {
 };
 
 const makePage = async () => {
+  const getUserInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+  const userInfo = getUserInfo ? getUserInfo : "";
   const id = window.location.search.slice(1);
   const months = [
     "January",
@@ -51,11 +54,7 @@ const makePage = async () => {
   const editButton = document.createElement("button");
   editButton.innerText = "Edit";
   editButton.className = "smallBrownButton position-right";
-  if (localStorage.getItem("userInfo")) {
-    editButton.style.display = "block";
-  } else {
-    editButton.style.display = "none";
-  }
+  editButton.style.display = userInfo.name === "Tompe" ? "block" : "none";
   editButton.onclick = () => {
     window.location.href = "edit.html" + "?" + id;
   };

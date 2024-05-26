@@ -6,7 +6,9 @@ export const makeHeader = () => {
   );
   const prefix = isFrontPage ? "" : "../";
 
-  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  const getUserInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+  const userInfo = getUserInfo ? getUserInfo : "";
 
   desktopHeader(isFrontPage, userInfo, prefix);
   tabletHeader(isFrontPage, userInfo, prefix);
@@ -36,8 +38,8 @@ const desktopHeader = (isFrontPage, userInfo, prefix) => {
 
   const createPost = document.createElement("a");
   createPost.innerText = "+ Create Post";
-
   createPost.className = "headerText margin cursor";
+  createPost.style.display = userInfo.name === "Tompe" ? "block" : "none";
 
   const home = document.createElement("a");
   home.innerText = "Home";
@@ -63,16 +65,14 @@ const desktopHeader = (isFrontPage, userInfo, prefix) => {
   logIn.className = "headerText margin cursor";
 
   logIn.href = prefix + "account/login.html";
-  createPost.href = prefix + "post/create.html";
   home.href = prefix + "index.html";
   logo.src = prefix + "public/Logo.png";
+  createPost.href = prefix + "post/create.html";
 
   if (userInfo) {
-    createPost.style.display = "block";
     logIn.style.display = "none";
     logOut.style.display = "block";
   } else {
-    createPost.style.display = "none";
     logIn.style.display = "block";
     logOut.style.display = "none";
   }
