@@ -101,11 +101,13 @@ const makeForms = (container, imageBox) => {
   submitButton.value = "Save";
   submitButton.className = "blueButton";
 
-  const deleteButton = document.createElement("button");
-  deleteButton.innerText = "Cancel";
-  deleteButton.className = "smallBlueButton";
-
-  container.append(form, deleteButton);
+  const cancelButton = document.createElement("button");
+  cancelButton.innerText = "Cancel";
+  cancelButton.className = "smallBlueButton";
+  cancelButton.onclick = () => {
+    window.location.href = "../index.html";
+  };
+  container.append(form, cancelButton);
   form.append(
     imageFormBox,
     tagFormBox,
