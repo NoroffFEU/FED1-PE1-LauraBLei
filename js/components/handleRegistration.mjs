@@ -29,7 +29,7 @@ export const handleRegistration = () => {
     );
     if (response) {
       alert(`Successfully created user "${registerData.name}"`);
-      window.location.href = "../index.html";
+      window.location.href = "./login.html";
     } else {
       alert("Something went wrong!");
     }
