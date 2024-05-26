@@ -165,12 +165,12 @@ const makeBlogPostGrid = (blogs, mechContainer) => {
 
   const sortByNewest = document.createElement("li");
   sortByNewest.innerText = "Newest";
-  sortByNewest.className = "headerTwo cursor";
+  sortByNewest.className = "headerTwo cursor hover";
   sortByNewest.id = "newest";
 
   const sortByOldest = document.createElement("li");
   sortByOldest.innerText = "Oldest";
-  sortByOldest.className = "headerTwo cursor";
+  sortByOldest.className = "headerTwo cursor hover";
   sortByOldest.id = "oldest";
 
   const filterButtonDetails = document.createElement("details");
@@ -185,27 +185,27 @@ const makeBlogPostGrid = (blogs, mechContainer) => {
 
   const showAll = document.createElement("li");
   showAll.innerText = "Show All";
-  showAll.className = "headerTwo cursor filter";
+  showAll.className = "headerTwo cursor filter hover";
 
   const filterByOutdoor = document.createElement("li");
   filterByOutdoor.innerText = "Outdoor";
-  filterByOutdoor.className = "headerTwo cursor filter";
+  filterByOutdoor.className = "headerTwo cursor filter hover";
 
   const filterByFamily = document.createElement("li");
   filterByFamily.innerText = "Family";
-  filterByFamily.className = "headerTwo cursor filter";
+  filterByFamily.className = "headerTwo cursor filter hover";
 
   const filterByFriends = document.createElement("li");
   filterByFriends.innerText = "Friends";
-  filterByFriends.className = "headerTwo cursor filter";
+  filterByFriends.className = "headerTwo cursor filter hover";
 
   const filterByTompe = document.createElement("li");
   filterByTompe.innerText = "Tompe";
-  filterByTompe.className = "headerTwo cursor filter";
+  filterByTompe.className = "headerTwo cursor filter hover";
 
   const filterByIndoor = document.createElement("li");
   filterByIndoor.innerText = "Indoor";
-  filterByIndoor.className = "headerTwo cursor filter";
+  filterByIndoor.className = "headerTwo cursor filter hover";
 
   const searchContainer = document.createElement("div");
   searchContainer.className = "searchContainer width-100 flex-noWrap";

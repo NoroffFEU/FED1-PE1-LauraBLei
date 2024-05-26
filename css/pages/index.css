@@ -23,6 +23,9 @@
 
 /*------------Grid-------------*/
 
+.hover:hover {
+  color: var(--black);
+}
 .blogPostGridContainer {
   grid-gap: 1em;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
