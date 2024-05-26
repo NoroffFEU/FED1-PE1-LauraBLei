@@ -32,6 +32,7 @@
 
 .postImageBox {
   max-height: 200px;
+  transition: transform 360ms ease-in-out;
 }
 
 .postImageBox:hover {
