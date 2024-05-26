@@ -20,7 +20,7 @@ const makePage = () => {
   image.className = "object-fit width-100 height-100";
 
   const headlineContainer = document.createElement("div");
-  headlineContainer.className = "headlineContainer width-100 marginAbout";
+  headlineContainer.className = "headlineContainer width-100";
 
   const headline = document.createElement("h1");
   headline.innerText = "The dog called Marley";
@@ -47,7 +47,7 @@ const makePage = () => {
     "A few years later, life took another exciting turn. Laura met someone special, Marley’s dad, Lasse, who lived in Norway. This meant another big move for Marley. Moving from Denmark to Norway was a significant change, but it opened up a whole new world for him. The Norwegian landscape, with its majestic mountains and breathtaking nature, became his new playground. Marley thrived in this fresh environment, embracing the vast outdoors with enthusiasm. Norway's natural beauty offered endless opportunities for adventure. Marley loved hiking through the mountains, exploring the forests, and playing in the snow. Each day was a new adventure, and he cherished the time spent with his family in this new, beautiful setting. The crisp Norwegian air and stunning scenery brought out the best in Marley, making him even happier and more energetic. His journey from a Bosnian street dog to a beloved family member living in the picturesque landscapes of Norway is a heartwarming tale of resilience, love, and new beginnings.";
 
   const headlineContainerTwo = document.createElement("div");
-  headlineContainerTwo.className = "headlineContainer width-100 marginAbout";
+  headlineContainerTwo.className = "headlineContainer width-100";
 
   const headlineTwo = document.createElement("h1");
   headlineTwo.innerText = "About This Blog";
